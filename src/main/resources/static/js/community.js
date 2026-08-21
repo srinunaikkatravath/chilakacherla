@@ -702,12 +702,16 @@ function loadEducatedYouth() {
                 `;
                 tbody.appendChild(tr);
             });
-function closeFounderModal() {
+        });
+}
+
+window.closeFounderModal = function() {
     const modal = document.getElementById('founderModal');
     if (modal) {
-        modal.style.display = 'none';
+        modal.style.setProperty('display', 'none', 'important');
     }
-}
+};
+
 
 
 

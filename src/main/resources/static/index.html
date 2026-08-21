@@ -1034,9 +1034,9 @@
     </div>
 
     <!-- ==================== FOUNDER & CEO WELCOME POPUP MODAL ==================== -->
-    <div id="founderModal" class="modal-overlay" style="display: flex;">
+    <div id="founderModal" class="modal-overlay" style="display: flex;" onclick="if(event.target===this) this.style.display='none';">
         <div class="modal-content founder-modal-box">
-            <button class="close-modal-btn founder-close-x" onclick="closeFounderModal()">&times;</button>
+            <button class="close-modal-btn founder-close-x" onclick="document.getElementById('founderModal').style.display='none'; if(window.closeFounderModal) closeFounderModal();">&times;</button>
             <div class="founder-modal-body">
                 <div class="founder-img-col">
                     <img src="https://media.licdn.com/dms/image/v2/D5603AQFarzmpaOzs4Q/profile-displayphoto-scale_400_400/B56Z2a10UrIUAg-/0/1776419296167?e=2147483647&v=beta&t=hm5LTcDijhuNtmYSWZnVC3fIj82VxPFzfmgvuP9A838" 
@@ -1046,15 +1046,24 @@
                     <span class="founder-badge"><i class="fa-solid fa-certificate"></i> Verified Founder</span>
                 </div>
                 <div class="founder-info-col">
-                    <div class="founder-tag-line"><i class="fa-solid fa-hands-clapping"></i> Welcome to Chilakacherla Portal</div>
+                    <div class="founder-tag-line"><i class="fa-solid fa-hands-clapping"></i> Founder's Vision & Global Mission</div>
                     <h2 class="founder-name">Srinu Naik Katravath</h2>
                     <div class="founder-role"><i class="fa-solid fa-briefcase"></i> Founder & CEO, <a href="https://www.nextafield.co.in" target="_blank" rel="noopener noreferrer" style="color:var(--accent-cyan); text-decoration:underline;">Next Afield Labs</a></div>
-                    <p class="founder-message">
-                        "Welcome to the official Chilakacherla Village Community & Public Information Portal! Our vision at Next Afield Labs is to empower rural panchayats with state-of-the-art digital infrastructure, transparent fund auditing, farmer marketplace hubs, and accessible public voter services."
-                    </p>
+                    <div class="founder-message">
+                        <p style="margin-bottom: 0.6rem;">
+                            A world where every Indian farmer has the same real-time, data-driven advantage as a global commodity trader — where no crop is lost to preventable pest outbreaks, no farmer is cheated on price, and every harvest has a verifiable identity from soil to shelf.
+                        </p>
+                        <p style="margin-bottom: 0.6rem;">
+                            We are building toward a future where India's 150 million farming families are not just food producers — they are data-empowered entrepreneurs leading the world's most sustainable supply chains.
+                        </p>
+                        <p style="font-weight: 700; color: var(--accent-cyan); margin-bottom: 0.2rem;">
+                            "From the soil of India to the fields of Africa — Next Afield is not just another startup. It's a global mission."
+                        </p>
+                        <div style="font-size: 0.8rem; text-align: right; color: var(--accent-gold); font-weight: 700;">— Srinu Naik, Founder & CEO</div>
+                    </div>
                     <div class="founder-footer-actions">
                         <a href="https://www.nextafield.co.in" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-size:0.85rem;"><i class="fa-solid fa-globe"></i> Visit www.nextafield.co.in</a>
-                        <button class="btn btn-primary" onclick="closeFounderModal()"><i class="fa-solid fa-arrow-right-to-bracket"></i> Enter Village Portal</button>
+                        <button class="btn btn-primary" onclick="document.getElementById('founderModal').style.display='none'; if(window.closeFounderModal) closeFounderModal();"><i class="fa-solid fa-arrow-right-to-bracket"></i> Enter Village Portal</button>
                     </div>
                 </div>
             </div>
