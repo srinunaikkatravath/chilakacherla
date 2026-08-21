@@ -702,8 +702,13 @@ function loadEducatedYouth() {
                 `;
                 tbody.appendChild(tr);
             });
-        });
+function closeFounderModal() {
+    const modal = document.getElementById('founderModal');
+    if (modal) {
+        modal.style.display = 'none';
+    }
 }
+
 
 
 

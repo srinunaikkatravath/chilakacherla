@@ -1235,4 +1235,152 @@ button, a, select, input {
     text-decoration: underline;
 }
 
+/* ==================== TABLE RESPONSIVE SCROLLING FIX ==================== */
+.table-responsive {
+    width: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    display: block !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-x pan-y !important;
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    border: 1px solid var(--card-border);
+}
+
+.data-table {
+    width: 100% !important;
+    min-width: 680px !important;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+/* ==================== FOUNDER MODAL STYLING ==================== */
+.founder-modal-box {
+    max-width: 650px !important;
+    width: 90% !important;
+    border-radius: 24px !important;
+    padding: 2.2rem !important;
+    position: relative;
+    background: var(--card-bg-solid);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+    border: 1px solid var(--card-hover-border);
+}
+
+.founder-close-x {
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+    background: rgba(0, 0, 0, 0.08);
+    border: none;
+    font-size: 1.6rem;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-muted);
+    transition: all 0.2s ease;
+}
+
+.founder-close-x:hover {
+    background: var(--accent-red);
+    color: #fff;
+}
+
+.founder-modal-body {
+    display: flex;
+    gap: 1.8rem;
+    align-items: center;
+}
+
+@media (max-width: 640px) {
+    .founder-modal-body {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.2rem;
+    }
+}
+
+.founder-img-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    flex-shrink: 0;
+}
+
+.founder-profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent-cyan);
+    box-shadow: 0 8px 20px rgba(13, 148, 136, 0.3);
+}
+
+.founder-badge {
+    background: rgba(13, 148, 136, 0.12);
+    color: var(--accent-cyan);
+    border: 1px solid rgba(13, 148, 136, 0.3);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 12px;
+    text-transform: uppercase;
+}
+
+.founder-info-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.founder-tag-line {
+    font-size: 0.78rem;
+    color: var(--accent-blue);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.founder-name {
+    font-family: var(--font-heading);
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: var(--text-bright);
+}
+
+.founder-role {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin-bottom: 0.4rem;
+}
+
+.founder-message {
+    font-size: 0.86rem;
+    line-height: 1.6;
+    color: var(--text-main);
+    font-style: italic;
+    background: rgba(2, 132, 199, 0.06);
+    border-left: 3px solid var(--accent-blue);
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.founder-footer-actions {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+    .founder-footer-actions {
+        justify-content: center;
+    }
+}
+
 
