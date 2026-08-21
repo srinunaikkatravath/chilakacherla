@@ -922,26 +922,96 @@ button, a, select, input {
 
 /* Tablet & Mobile Screens (<= 768px) */
 @media (max-width: 768px) {
-    /* Header & Emergency Top Bar */
-    .top-emergency-bar { padding: 0.5rem 0.8rem; }
-    .emergency-container { flex-direction: column; align-items: stretch; gap: 0.5rem; text-align: center; }
-    .emerg-pills { justify-content: center; }
-
-    .header-container {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0.8rem;
-        padding: 0.8rem 1rem;
+    /* Top Emergency Bar - Single Line Marquee Row */
+    .top-emergency-bar {
+        padding: 0.25rem 0.6rem;
+        font-size: 0.72rem;
     }
-    .brand { gap: 0.7rem; }
-    .logo-icon { width: 40px; height: 40px; font-size: 1.2rem; }
-    .brand h1 { font-size: 1.15rem; line-height: 1.3; }
-    .subtitle { font-size: 0.75rem; }
-    .header-actions { justify-content: space-between; width: 100%; }
+    .emergency-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        overflow-x: auto;
+        white-space: nowrap;
+        gap: 0.6rem;
+        -webkit-overflow-scrolling: touch;
+    }
+    .emerg-pills {
+        display: flex;
+        gap: 0.4rem;
+        flex-wrap: nowrap;
+    }
+    .emerg-pill {
+        padding: 0.1rem 0.45rem;
+        font-size: 0.7rem;
+        white-space: nowrap;
+    }
 
-    /* Navigation Bar */
-    .nav-container { padding: 0 0.8rem; gap: 0.2rem; }
-    .nav-tab { padding: 0.65rem 0.85rem; font-size: 0.82rem; }
+    /* Ultra-Compact Single Row Mobile Header */
+    .app-header {
+        position: relative; /* Non-blocking scroll so content gets maximum viewport space */
+    }
+    .header-container {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 0.4rem 0.8rem !important;
+        gap: 0.4rem !important;
+    }
+    .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .logo-icon {
+        width: 34px !important;
+        height: 34px !important;
+        font-size: 1rem !important;
+        border-radius: 8px !important;
+        flex-shrink: 0;
+    }
+    .brand h1 {
+        font-size: 0.95rem !important;
+        line-height: 1.15;
+    }
+    .subtitle {
+        display: none !important; /* Hidden on mobile to keep header height under 45px */
+    }
+    .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem !important;
+        width: auto !important;
+        flex-shrink: 0;
+    }
+    .live-weather-badge {
+        padding: 0.25rem 0.5rem !important;
+        font-size: 0.72rem !important;
+        border-radius: 12px !important;
+    }
+    .theme-toggle-btn {
+        padding: 0.25rem 0.55rem !important;
+        font-size: 0.72rem !important;
+        border-radius: 12px !important;
+    }
+
+    /* Sticky Slim Navigation Bar */
+    .main-nav-bar {
+        position: sticky;
+        top: 0;
+        z-index: 110;
+        background: var(--header-bg);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--card-border);
+    }
+    .nav-container {
+        padding: 0 0.6rem;
+        gap: 0.2rem;
+    }
+    .nav-tab {
+        padding: 0.55rem 0.75rem;
+        font-size: 0.8rem;
+    }
 
     /* Main Container */
     .main-content { margin: 1rem auto; padding: 0 0.8rem; }
