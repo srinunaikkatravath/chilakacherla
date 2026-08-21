@@ -821,6 +821,79 @@ function loadVillageEvents() {
         });
 }
 
+// 11. ADVANCED FEATURES: AI VOICE SEARCH & WHATSAPP SHARE
+function startVoiceSearch() {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const feedback = document.getElementById('aiVoiceFeedback');
+
+    if (!SpeechRecognition) {
+        alert('Voice Recognition is supported on Chrome/Edge browsers. Please type your query in the search box.');
+        return;
+    }
+
+    const recognition = new SpeechRecognition();
+    recognition.lang = 'te-IN'; // Supports Telugu & English spoken queries
+    recognition.interimResults = false;
+
+    if (feedback) {
+        feedback.style.display = 'block';
+        feedback.innerHTML = '<i class="fa-solid fa-microphone-lines fa-bounce" style="color:var(--accent-red);"></i> Listening... Speak in Telugu or English (e.g., "ఓటరు జాబితా" / "Mandi Rates")';
+    }
+
+    recognition.start();
+
+    recognition.onresult = function(event) {
+        const transcript = event.results[0][0].transcript;
+        const input = document.getElementById('aiVoiceInput');
+        if (input) input.value = transcript;
+        if (feedback) {
+            feedback.innerHTML = `<i class="fa-solid fa-check" style="color:var(--accent-green);"></i> Recognized: "${transcript}"`;
+        }
+        executeAiSearch(transcript);
+    };
+
+    recognition.onerror = function() {
+        if (feedback) {
+            feedback.innerHTML = '<span style="color:var(--accent-red);"><i class="fa-solid fa-triangle-exclamation"></i> Voice input timeout or error. Please try again.</span>';
+        }
+    };
+}
+
+function handleAiVoiceSearch(event) {
+    if (event.key === 'Enter') {
+        const query = document.getElementById('aiVoiceInput').value;
+        executeAiSearch(query);
+    }
+}
+
+function executeAiSearch(query) {
+    if (!query) return;
+    const q = query.toLowerCase().trim();
+
+    if (q.includes('voter') || q.includes('ఓటరు') || q.includes('ward') || q.includes('epic') || q.includes('booth')) {
+        switchCommunityTab('voter');
+        const searchInput = document.getElementById('voterSearchInput');
+        if (searchInput) { searchInput.value = query; filterVoterMembers(); }
+    } else if (q.includes('mandi') || q.includes('price') || q.includes('ధర') || q.includes('chili') || q.includes('cotton') || q.includes('ధరలు')) {
+        switchCommunityTab('farmers');
+    } else if (q.includes('scheme') || q.includes('fund') || q.includes('నిధులు') || q.includes('పధకాలు') || q.includes('nri')) {
+        switchCommunityTab('schemes');
+    } else if (q.includes('job') || q.includes('ఉద్యోగం') || q.includes('youth') || q.includes('education')) {
+        switchCommunityTab('education');
+    } else if (q.includes('donor') || q.includes('blood') || q.includes('రక్తం') || q.includes('health')) {
+        switchCommunityTab('health');
+    } else if (q.includes('bazaar') || q.includes('buy') || q.includes('sell') || q.includes('tractor')) {
+        switchCommunityTab('bazaar');
+    } else if (q.includes('grievance') || q.includes('complaint') || q.includes('సమస్య')) {
+        switchCommunityTab('sachivalayam');
+    }
+}
+
+function sharePortalOnWhatsApp() {
+    const text = encodeURIComponent("🏛️ *Official Chilakacherla & Yeguva Cherlo Palle Village Portal (PIN: 523331)*\n\nCheck live public fund audits (₹3.70 Cr), Veligonda irrigation canal discharge, daily Dornala mandi rates, voter lists, and Sachivalayam services online!\n\n🔗 Visit Portal: " + window.location.href);
+    window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
+}
+
 
 
 

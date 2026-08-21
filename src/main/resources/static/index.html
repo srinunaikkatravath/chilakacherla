@@ -109,6 +109,15 @@
                             </div>
                         </div>
 
+                        <!-- AI Voice & Multilingual Search Bar -->
+                        <div style="background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.2); padding: 0.8rem; border-radius: 16px; margin-bottom: 1.2rem; display: flex; gap: 0.6rem; flex-wrap: wrap;">
+                            <input type="text" id="aiVoiceInput" placeholder="🔍 Ask AI in Voice or Text (e.g., 'వ్యాపార ధరలు', 'Voter Ward 3', 'Veligonda water')..." style="flex: 1; min-width: 220px; padding: 0.6rem 1rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.3); color: #fff; font-size: 0.9rem;" onkeyup="handleAiVoiceSearch(event)">
+                            <button class="btn btn-accent" onclick="startVoiceSearch()" id="micBtn" style="padding: 0.6rem 1rem;"><i class="fa-solid fa-microphone"></i> Voice Search (తెలుగు / Eng)</button>
+                            <button class="btn btn-success" onclick="sharePortalOnWhatsApp()"><i class="fa-brands fa-whatsapp"></i> Share WhatsApp</button>
+                            <button class="btn btn-outline" onclick="window.print()" style="color: #fff; border-color: rgba(255,255,255,0.4);"><i class="fa-solid fa-print"></i> Print PDF</button>
+                        </div>
+                        <div id="aiVoiceFeedback" style="font-size: 0.8rem; color: var(--accent-cyan); display: none; margin-bottom: 1rem;"></div>
+
                         <div class="hero-quick-buttons">
                             <button class="btn btn-primary" onclick="switchCommunityTab('schemes')">
                                 <i class="fa-solid fa-coins"></i> View All Sector Funds (₹3.70 Cr)
@@ -147,6 +156,79 @@
                     <div style="background: var(--card-bg-solid); padding: 1rem; border-radius: 10px; border: 1px solid var(--card-border);">
                         <strong style="color: var(--accent-amber);">Major Irrigation Project:</strong>
                         <p style="font-size: 0.88rem; color: var(--text-muted);">Poola Subbaiah Veligonda Project Canal Network (850 Acres Ayacut)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Poola Subbaiah Veligonda Canal Discharge & Agromet Weather Gauge -->
+            <div class="card-box mb-4" style="background: linear-gradient(135deg, rgba(2, 132, 199, 0.1) 0%, rgba(13, 148, 136, 0.1) 100%); border: 1px solid rgba(56, 189, 248, 0.3);">
+                <div class="card-box-header">
+                    <h3><i class="fa-solid fa-water"></i> Poola Subbaiah Veligonda Project Canal Discharge & Agromet Radar</h3>
+                    <span class="tag-badge glow">Irrigation Live Gauge</span>
+                </div>
+                <div class="staff-grid">
+                    <div style="background: var(--card-bg-solid); padding: 1.1rem; border-radius: 12px; border: 1px solid var(--card-border);">
+                        <span style="font-size:0.8rem; color:var(--text-muted); display:block;">Active Canal Flow Rate</span>
+                        <strong style="font-size:1.6rem; color:var(--accent-blue); font-family:var(--font-heading);"><i class="fa-solid fa-droplet"></i> 1,250 Cusecs</strong>
+                        <div style="font-size:0.78rem; color:var(--accent-green); margin-top:0.3rem;"><i class="fa-solid fa-check"></i> Supplying 850 Acres Ayacut in Chilakacherla</div>
+                    </div>
+                    <div style="background: var(--card-bg-solid); padding: 1.1rem; border-radius: 12px; border: 1px solid var(--card-border);">
+                        <span style="font-size:0.8rem; color:var(--text-muted); display:block;">Dornala Agromet Forecast</span>
+                        <strong style="font-size:1.6rem; color:var(--accent-amber); font-family:var(--font-heading);"><i class="fa-solid fa-cloud-sun-rain"></i> 31°C | Part Cloudy</strong>
+                        <div style="font-size:0.78rem; color:var(--text-muted); margin-top:0.3rem;">Humidity: 68% | Rain Chance: 15%</div>
+                    </div>
+                    <div style="background: var(--card-bg-solid); padding: 1.1rem; border-radius: 12px; border: 1px solid var(--card-border);">
+                        <span style="font-size:0.8rem; color:var(--text-muted); display:block;">Drinking Water Supply Hours</span>
+                        <strong style="font-size:1.6rem; color:var(--accent-cyan); font-family:var(--font-heading);"><i class="fa-solid fa-clock"></i> 6:30 AM & 5:30 PM</strong>
+                        <div style="font-size:0.78rem; color:var(--accent-cyan); margin-top:0.3rem;"><i class="fa-solid fa-faucet-drip"></i> 60,000L OHT Supply Active</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Village Public Analytics Dashboard -->
+            <div class="card-box mb-4">
+                <div class="card-box-header">
+                    <h3><i class="fa-solid fa-chart-pie"></i> Chilakacherla & Yeguva Cherlo Palle Interactive Analytics</h3>
+                    <span class="tag-badge glow">Live Public Ledger</span>
+                </div>
+                <div class="grid-2col">
+                    <div style="background: var(--card-bg-solid); padding: 1.2rem; border-radius: 14px; border: 1px solid var(--card-border);">
+                        <h4 style="font-size: 0.95rem; color: var(--text-bright); margin-bottom: 0.8rem;"><i class="fa-solid fa-coins" style="color: var(--accent-gold);"></i> Public Funds Utilization Ratio (₹3.70 Cr Total)</h4>
+                        <div style="margin-bottom: 0.6rem;">
+                            <div style="display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 0.3rem;">
+                                <span>Roads & Infrastructure (PMGSY / 15th FC)</span>
+                                <strong>₹1.25 Cr (100% Complete)</strong>
+                            </div>
+                            <div style="height: 8px; background: rgba(0,0,0,0.1); border-radius: 4px; overflow: hidden;"><div style="width: 100%; height: 100%; background: var(--accent-green);"></div></div>
+                        </div>
+                        <div style="margin-bottom: 0.6rem;">
+                            <div style="display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 0.3rem;">
+                                <span>Veligonda Canal Distributary Network</span>
+                                <strong>₹95 Lakhs (88% Complete)</strong>
+                            </div>
+                            <div style="height: 8px; background: rgba(0,0,0,0.1); border-radius: 4px; overflow: hidden;"><div style="width: 88%; height: 100%; background: var(--accent-blue);"></div></div>
+                        </div>
+                        <div style="margin-bottom: 0.6rem;">
+                            <div style="display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 0.3rem;">
+                                <span>Jal Jeevan Tap Water Connection Grid</span>
+                                <strong>₹48 Lakhs (82% Complete)</strong>
+                            </div>
+                            <div style="height: 8px; background: rgba(0,0,0,0.1); border-radius: 4px; overflow: hidden;"><div style="width: 82%; height: 100%; background: var(--accent-cyan);"></div></div>
+                        </div>
+                    </div>
+
+                    <div style="background: var(--card-bg-solid); padding: 1.2rem; border-radius: 14px; border: 1px solid var(--card-border);">
+                        <h4 style="font-size: 0.95rem; color: var(--text-bright); margin-bottom: 0.8rem;"><i class="fa-solid fa-circle-check" style="color: var(--accent-green);"></i> Gram Sachivalayam Service Performance</h4>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; text-align: center;">
+                            <div style="background: rgba(22, 163, 74, 0.08); padding: 0.8rem; border-radius: 10px; border: 1px solid rgba(22, 163, 74, 0.2);">
+                                <span style="font-size: 0.75rem; color: var(--text-muted); display: block;">Grievance Resolution</span>
+                                <strong style="font-size: 1.4rem; color: var(--accent-green);">94.2%</strong>
+                            </div>
+                            <div style="background: rgba(2, 132, 199, 0.08); padding: 0.8rem; border-radius: 10px; border: 1px solid rgba(2, 132, 199, 0.2);">
+                                <span style="font-size: 0.75rem; color: var(--text-muted); display: block;">Average Turnaround Time</span>
+                                <strong style="font-size: 1.4rem; color: var(--accent-blue);">48 Hours</strong>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
