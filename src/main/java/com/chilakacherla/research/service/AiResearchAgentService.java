@@ -31,7 +31,7 @@ public class AiResearchAgentService {
 
         String extractedData = "{\"topic\":\"" + queryTopic + "\", \"PIN\":\"523331\", \"mandal\":\"Dornala\", \"district\":\"Prakasam\", \"details\":\"Extracted from public government source index for Chilakacherla village.\"}";
 
-        executionLogs.add("[5. DEDUPLICATE] Running fuzzy entity resolution against known variations (Chilakacherla, Chilaka Cherla, Chilakacherla Gudem)...");
+        executionLogs.add("[5. DEDUPLICATE] Running fuzzy entity resolution against known variations (Chilakacherla, Chilaka Cherla)...");
         executionLogs.add("[6. SCORE] Assigning source trust ranking & confidence score...");
 
         String sourceUrl = "https://prakasam.ap.gov.in/public-notices/" + queryTopic.toLowerCase().replaceAll("[^a-z0-9]", "-");

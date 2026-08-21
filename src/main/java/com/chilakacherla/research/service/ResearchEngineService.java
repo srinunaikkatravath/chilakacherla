@@ -99,7 +99,7 @@ public class ResearchEngineService {
     private void detectDuplicates(ResearchRecord newRecord) {
         List<ResearchRecord> existingRecords = recordRepository.findAll();
         List<String> knownVariations = Arrays.asList(
-                "chilakacherla", "chilaka cherla", "chilaka cherlagudem", "chilakacherla gudem", "chilaka cherla gudem"
+                "chilakacherla", "chilaka cherla", "chilakacherla colony"
         );
 
         String newEntityLower = newRecord.getEntity().toLowerCase().trim();

@@ -73,7 +73,7 @@ public class DataInitializer implements CommandLineRunner {
                 "Chilakacherla",
                 Category.IDENTITY,
                 "Official Village Profile & Habitations Directory",
-                "{\"officialName\":\"Chilakacherla\",\"gramPanchayat\":\"Yeguva Cherlo Palle Gram Panchayat (GP Code: 235054)\",\"alternateNames\":[\"Chilaka Cherla\",\"Chilakacherla Gudem\",\"Chilaka Cherlagudem\",\"Yeguva Cherlo Palle\",\"Y. Cherlopalli\",\"Yerraguntla Cherlopalli\"],\"habitations\":[\"Chilakacherla Main Village\",\"Chilakacherla Gudem\",\"Yeguva Cherlo Palle (Y. Cherlopalli)\",\"Panukumadugu\"],\"PIN\":\"523331\",\"mandal\":\"Dornala (P. Dornala)\",\"district\":\"Prakasam\",\"state\":\"Andhra Pradesh\",\"villageCode\":\"590598\",\"postOffice\":\"Chinna Dornala SO (PIN 523331)\",\"assemblyConstituency\":\"Yerragondapalem (SC)\",\"parliamentConstituency\":\"Ongole\",\"coordinates\":\"15.9042° N, 79.1021° E\",\"totalArea\":\"1,420 Hectares\",\"irrigationProject\":\"Poola Subbaiah Veligonda Project Canal Network\"}",
+                "{\"officialName\":\"Chilakacherla\",\"gramPanchayat\":\"Yeguva Cherlo Palle Gram Panchayat (GP Code: 235054)\",\"alternateNames\":[\"Chilaka Cherla\",\"Chilaka Cherlagudem\",\"Yeguva Cherlo Palle\",\"Y. Cherlopalli\",\"Yerraguntla Cherlopalli\"],\"habitations\":[\"Chilakacherla Main Village\",\"Chilakacherla Colony\",\"Yeguva Cherlo Palle (Y. Cherlopalli)\",\"Panukumadugu\"],\"PIN\":\"523331\",\"mandal\":\"Dornala (P. Dornala)\",\"district\":\"Prakasam\",\"state\":\"Andhra Pradesh\",\"villageCode\":\"590598\",\"postOffice\":\"Chinna Dornala SO (PIN 523331)\",\"assemblyConstituency\":\"Yerragondapalem (SC)\",\"parliamentConstituency\":\"Ongole\",\"coordinates\":\"15.9042° N, 79.1021° E\",\"totalArea\":\"1,420 Hectares\",\"irrigationProject\":\"Poola Subbaiah Veligonda Project Canal Network\"}",
                 "https://prakasam.ap.gov.in/village-directory",
                 "Prakasam District Official Portal & AP Panchayat Raj Department",
                 "Official Govt Portal",
@@ -133,7 +133,7 @@ public class DataInitializer implements CommandLineRunner {
                 125.00,
                 125.00,
                 0.00,
-                "5.2 km All-Weather BT Asphalt Road connecting Dornala Main Highway -> Chilakacherla -> Chilakacherla Gudem -> Yeguva Cherlo Palle -> Panukumadugu.",
+                "5.2 km All-Weather BT Asphalt Road connecting Dornala Main Highway -> Chilakacherla -> Yeguva Cherlo Palle -> Panukumadugu.",
                 "FULLY_SPENT"
         ));
 
@@ -163,7 +163,7 @@ public class DataInitializer implements CommandLineRunner {
                 48.00,
                 39.50,
                 8.50,
-                "Construction of 60,000 Liter Overhead Water Tank at Chilakacherla Gudem and piping network providing 420 Functional Household Tap Connections (FHTC).",
+                "Construction of 60,000 Liter Overhead Water Tank at Chilakacherla and piping network providing 420 Functional Household Tap Connections (FHTC).",
                 "UTILIZING"
         ));
 
@@ -253,7 +253,7 @@ public class DataInitializer implements CommandLineRunner {
                 "PANCHAYAT",
                 "CENTRAL_GOVT",
                 "100% Free Household Tap Water Connection (FHTC)",
-                "Every residential household in Chilakacherla, Chilakacherla Gudem, Yeguva Cherlo Palle, and Panukumadugu.",
+                "Every residential household in Chilakacherla, Yeguva Cherlo Palle, and Panukumadugu.",
                 "1. House Tax Receipt / Water Connection Form\n2. Head of Household Aadhaar Card",
                 "1st January 2026",
                 "30th November 2026",
@@ -298,7 +298,7 @@ public class DataInitializer implements CommandLineRunner {
         grv1.setResolutionNotes("Replaced LED driver unit and tested wiring. Streetlight fully functional.");
         grievanceRepository.save(grv1);
 
-        Grievance grv2 = new Grievance("CHK-GRV-1002", "Water Supply", "P. Lakshmi", "+91 98480 87654", "Main drinking water pipe leakage near Chilakacherla Gudem bus stop.", "Gudem Main Road");
+        Grievance grv2 = new Grievance("CHK-GRV-1002", "Water Supply", "P. Lakshmi", "+91 98480 87654", "Main drinking water pipe leakage near Chilakacherla bus stop.", "Chilakacherla Main Road");
         grv2.setStatus("IN_PROGRESS");
         grv2.setAssignedOfficial("RWSS Lineman (V. Anjaneyulu)");
         grievanceRepository.save(grv2);
@@ -354,7 +354,7 @@ public class DataInitializer implements CommandLineRunner {
                 "HIGH",
                 "25th August 2026 (10:00 AM)",
                 "Sarpanch & Panchayat Secretary",
-                "All residents of Chilakacherla, Chilakacherla Gudem, Yeguva Cherlo Palle, and Panukumadugu are invited to attend Gram Sabha at Sachivalayam premises to discuss Veligonda canal distribution and monsoon road works."
+                "All residents of Chilakacherla, Yeguva Cherlo Palle, and Panukumadugu are invited to attend Gram Sabha at Sachivalayam premises to discuss Veligonda canal distribution and monsoon road works."
         ));
 
         noticeRepository.save(new CommunityNotice(
@@ -377,7 +377,7 @@ public class DataInitializer implements CommandLineRunner {
 
         // 12. CRAFTSMEN & SERVICE PROVIDERS DIRECTORY
         craftsmanRepository.save(new Craftsman("M. Tirupataiah", "Electrician & Motor Mechanic", "+91 94402 77112", "Chilakacherla", 12, 4.8));
-        craftsmanRepository.save(new Craftsman("V. Anjaneyulu", "Plumber & Pipe Fitter", "+91 98485 33441", "Chilakacherla Gudem", 9, 4.7));
+        craftsmanRepository.save(new Craftsman("V. Anjaneyulu", "Plumber & Pipe Fitter", "+91 98485 33441", "Chilakacherla", 9, 4.7));
         craftsmanRepository.save(new Craftsman("G. Subba Rao", "Auto & Transport Driver", "+91 97018 66554", "Dornala Road", 15, 4.9));
         craftsmanRepository.save(new Craftsman("K. Veeranjaneyulu", "Carpenter & Furniture Works", "+91 94911 22334", "Yeguva Cherlo Palle", 14, 4.6));
         craftsmanRepository.save(new Craftsman("P. Satyanarayana", "Mason & Civil Works", "+91 98663 99887", "Gudem Street", 18, 4.9));
@@ -385,7 +385,7 @@ public class DataInitializer implements CommandLineRunner {
         // 13. VOTER RECORDS & POLLING STATIONS FOR YEGUVA CHERLO PALLE GP (523331)
         voterRecordRepository.save(new VoterRecord(1, "Chilakacherla Main (East)", 101, "MPPS Chilakacherla School (East Wing)", 410, 208, 202, "K. Subba Rao (BLO)", "+91 94403 11221"));
         voterRecordRepository.save(new VoterRecord(2, "Chilakacherla Main (West & RBK)", 102, "MPPS Chilakacherla School (West Wing)", 395, 198, 197, "P. Ramakrishna (BLO)", "+91 98482 33445"));
-        voterRecordRepository.save(new VoterRecord(3, "Chilakacherla Gudem Colony", 103, "Anganwadi Center Chilakacherla Gudem", 380, 195, 185, "G. Anjaneyulu (BLO)", "+91 97014 55667"));
+        voterRecordRepository.save(new VoterRecord(3, "Chilakacherla Colony", 103, "Anganwadi Center Chilakacherla", 380, 195, 185, "G. Anjaneyulu (BLO)", "+91 97014 55667"));
         voterRecordRepository.save(new VoterRecord(4, "Yeguva Cherlo Palle Main", 104, "Yeguva Cherlo Palle Gram Sachivalayam", 345, 175, 170, "M. Tirupataiah (BLO)", "+91 94905 66778"));
         voterRecordRepository.save(new VoterRecord(5, "Panukumadugu Hamlet", 104, "Community Hall Panukumadugu", 150, 76, 74, "V. Venkateswarlu (BLO)", "+91 98667 88990"));
 
@@ -393,7 +393,7 @@ public class DataInitializer implements CommandLineRunner {
         wardMemberRepository.save(new WardMember(0, "K. Venkateswarlu", "Gram Panchayat Sarpanch", "Yeguva Cherlo Palle GP", "+91 94401 23456"));
         wardMemberRepository.save(new WardMember(1, "B. Venkateswarlu", "Deputy Sarpanch / Ward 1 Member", "Chilakacherla East", "+91 94902 11223"));
         wardMemberRepository.save(new WardMember(2, "K. Rama Rao", "Ward 2 Member", "Chilakacherla West", "+91 94401 23456"));
-        wardMemberRepository.save(new WardMember(3, "M. Subbaiah", "Ward 3 Member", "Chilakacherla Gudem", "+91 98661 54321"));
+        wardMemberRepository.save(new WardMember(3, "M. Subbaiah", "Ward 3 Member", "Chilakacherla Colony", "+91 98661 54321"));
         wardMemberRepository.save(new WardMember(4, "P. Siva Parvathi", "Ward 4 Member", "Yeguva Cherlo Palle", "+91 97003 11224"));
         wardMemberRepository.save(new WardMember(5, "T. Venkatesh", "Ward 5 Member", "Panukumadugu", "+91 94411 77665"));
         wardMemberRepository.save(new WardMember(0, "Y. Chenna Kesavulu", "MPTC Representative (Dornala)", "Dornala Mandal", "+91 94405 88990"));
@@ -412,11 +412,11 @@ public class DataInitializer implements CommandLineRunner {
         voterMemberRepository.save(new VoterMember("AP1523331010", "P. Anusha", "Husband: P. Ramakrishna", "D.No 2-35", 34, "Female", 2, "Chilakacherla West", 102));
         voterMemberRepository.save(new VoterMember("AP1523331011", "M. Tirupataiah", "Father: M. Subbaiah", "D.No 2-51", 46, "Male", 2, "Chilakacherla West", 102));
 
-        voterMemberRepository.save(new VoterMember("AP1523331012", "M. Subbaiah", "Father: M. Guravaiah", "D.No 3-08", 58, "Male", 3, "Chilakacherla Gudem", 103));
-        voterMemberRepository.save(new VoterMember("AP1523331013", "M. Ramanamma", "Husband: M. Subbaiah", "D.No 3-08", 53, "Female", 3, "Chilakacherla Gudem", 103));
-        voterMemberRepository.save(new VoterMember("AP1523331014", "G. Anjaneyulu", "Father: G. Venkaiah", "D.No 3-22", 36, "Male", 3, "Chilakacherla Gudem", 103));
-        voterMemberRepository.save(new VoterMember("AP1523331015", "V. Anjaneyulu", "Father: V. Ramaiah", "D.No 3-40", 43, "Male", 3, "Chilakacherla Gudem", 103));
-        voterMemberRepository.save(new VoterMember("AP1523331016", "P. Satyanarayana", "Father: P. Subba Rao", "D.No 3-64", 50, "Male", 3, "Chilakacherla Gudem", 103));
+        voterMemberRepository.save(new VoterMember("AP1523331012", "M. Subbaiah", "Father: M. Guravaiah", "D.No 3-08", 58, "Male", 3, "Chilakacherla Colony", 103));
+        voterMemberRepository.save(new VoterMember("AP1523331013", "M. Ramanamma", "Husband: M. Subbaiah", "D.No 3-08", 53, "Female", 3, "Chilakacherla Colony", 103));
+        voterMemberRepository.save(new VoterMember("AP1523331014", "G. Anjaneyulu", "Father: G. Venkaiah", "D.No 3-22", 36, "Male", 3, "Chilakacherla Colony", 103));
+        voterMemberRepository.save(new VoterMember("AP1523331015", "V. Anjaneyulu", "Father: V. Ramaiah", "D.No 3-40", 43, "Male", 3, "Chilakacherla Colony", 103));
+        voterMemberRepository.save(new VoterMember("AP1523331016", "P. Satyanarayana", "Father: P. Subba Rao", "D.No 3-64", 50, "Male", 3, "Chilakacherla Colony", 103));
 
         voterMemberRepository.save(new VoterMember("AP1523331017", "K. Venkateswarlu", "Father: K. Subbaiah", "D.No 4-02", 54, "Male", 4, "Yeguva Cherlo Palle", 104));
         voterMemberRepository.save(new VoterMember("AP1523331018", "K. Radhika", "Husband: K. Venkateswarlu", "D.No 4-02", 49, "Female", 4, "Yeguva Cherlo Palle", 104));
@@ -443,11 +443,11 @@ public class DataInitializer implements CommandLineRunner {
         // 17. EDUCATED YOUTH & GRADUATE CANDIDATES TALENT POOL
         educatedCandidateRepository.save(new EducatedCandidate("K. Mahendra", "B.Tech", "Computer Science & Engineering", 2025, "Java, Spring Boot, React, SQL", "LOOKING_FOR_JOB", "Chilakacherla East", "+91 99890 12345"));
         educatedCandidateRepository.save(new EducatedCandidate("P. Deepthi", "M.Sc", "Agriculture (Agronomy)", 2024, "Crop Protection, Soil Testing, RBK Extensions", "PREPARING_COMPETITIVE", "Chilakacherla West", "+91 98485 66778"));
-        educatedCandidateRepository.save(new EducatedCandidate("G. Suresh", "B.Tech", "Electrical & Electronics (EEE)", 2025, "Substation Operations, PLC Automation", "LOOKING_FOR_JOB", "Chilakacherla Gudem", "+91 97018 22334"));
-        educatedCandidateRepository.save(new EducatedCandidate("M. Divya", "B.Sc", "Nursing & Critical Care", 2024, "Emergency Nursing, First Aid, ICU Operations", "PREPARING_COMPETITIVE", "Chilakacherla Gudem", "+91 98663 44556"));
+        educatedCandidateRepository.save(new EducatedCandidate("G. Suresh", "B.Tech", "Electrical & Electronics (EEE)", 2025, "Substation Operations, PLC Automation", "LOOKING_FOR_JOB", "Chilakacherla Colony", "+91 97018 22334"));
+        educatedCandidateRepository.save(new EducatedCandidate("M. Divya", "B.Sc", "Nursing & Critical Care", 2024, "Emergency Nursing, First Aid, ICU Operations", "PREPARING_COMPETITIVE", "Chilakacherla Colony", "+91 98663 44556"));
         educatedCandidateRepository.save(new EducatedCandidate("T. Rajesh", "B.Com", "Computer Applications & Accounting", 2025, "Tally Prime, GST Filing, Excel Analytics", "EMPLOYED", "Panukumadugu", "+91 94411 77665"));
         educatedCandidateRepository.save(new EducatedCandidate("K. Harika", "B.Ed", "English & Social Pedagogy", 2024, "Primary Education, Child Psychology, Spoken English", "LOOKING_FOR_JOB", "Yeguva Cherlo Palle", "+91 94911 88990"));
-        educatedCandidateRepository.save(new EducatedCandidate("V. Anjaneyulu", "Diploma", "Mechanical Engineering", 2025, "CAD Drafting, Machine Maintenance, Lathe Works", "LOOKING_FOR_JOB", "Chilakacherla Gudem", "+91 98485 33441"));
+        educatedCandidateRepository.save(new EducatedCandidate("V. Anjaneyulu", "Diploma", "Mechanical Engineering", 2025, "CAD Drafting, Machine Maintenance, Lathe Works", "LOOKING_FOR_JOB", "Chilakacherla Colony", "+91 98485 33441"));
 
         // 18. CRAWLER SCHEDULES
         scheduleRepository.save(new ResearchSchedule("News & Public Notices", Category.NEWS, ScheduleFrequency.DAILY, LocalDate.now()));
