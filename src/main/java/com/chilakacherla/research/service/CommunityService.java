@@ -52,6 +52,18 @@ public class CommunityService {
     @Autowired
     private EducatedCandidateRepository educatedCandidateRepository;
 
+    @Autowired
+    private MandiRateRepository mandiRateRepository;
+
+    @Autowired
+    private JobAlertRepository jobAlertRepository;
+
+    @Autowired
+    private NriContributorRepository nriContributorRepository;
+
+    @Autowired
+    private VillageEventRepository villageEventRepository;
+
     // Grievance Handling
     public Grievance submitGrievance(String category, String residentName, String residentPhone, String description, String location) {
         String trackingId = "CHK-GRV-" + (1000 + grievanceRepository.count() + 1);
@@ -86,6 +98,10 @@ public class CommunityService {
         return donorRepository.save(donor);
     }
 
+    public List<BloodDonor> getBloodDonors() {
+        return donorRepository.findAll();
+    }
+
     public List<BloodDonor> getBloodDonors(String group) {
         if (group != null && !group.trim().isEmpty() && !group.equalsIgnoreCase("ALL")) {
             return donorRepository.findByBloodGroupIgnoreCaseAndAvailableTrue(group);
@@ -96,6 +112,26 @@ public class CommunityService {
     // RBK Stocks
     public List<AgriStock> getAgriStocks() {
         return agriStockRepository.findAll();
+    }
+
+    // Mandi Rates
+    public List<MandiRate> getMandiRates() {
+        return mandiRateRepository.findAll();
+    }
+
+    // Job Alerts & Exams
+    public List<JobAlert> getJobAlerts() {
+        return jobAlertRepository.findAll();
+    }
+
+    // NRI Network
+    public List<NriContributor> getNriContributors() {
+        return nriContributorRepository.findAll();
+    }
+
+    // Village Events
+    public List<VillageEvent> getVillageEvents() {
+        return villageEventRepository.findAll();
     }
 
     // Notices

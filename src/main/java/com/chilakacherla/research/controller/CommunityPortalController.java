@@ -149,4 +149,28 @@ public class CommunityPortalController {
     public List<EducatedCandidate> getEducatedYouth(@RequestParam(required = false) String status) {
         return communityService.getEducatedCandidates(status);
     }
+
+    // Next Afield Mandi Market Rates
+    @GetMapping("/mandi-rates")
+    public List<MandiRate> getMandiRates() {
+        return communityService.getMandiRates();
+    }
+
+    // Job Alerts & Exams
+    @GetMapping("/job-alerts")
+    public List<JobAlert> getJobAlerts() {
+        return communityService.getJobAlerts();
+    }
+
+    // Chilakacherla NRI Connect & Development Fund
+    @GetMapping("/nri-connect")
+    public List<NriContributor> getNriConnect() {
+        return communityService.getNriContributors();
+    }
+
+    // Cultural & Festival Calendar Events
+    @GetMapping("/events")
+    public List<VillageEvent> getVillageEvents() {
+        return communityService.getVillageEvents();
+    }
 }

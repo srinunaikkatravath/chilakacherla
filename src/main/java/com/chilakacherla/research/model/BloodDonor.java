@@ -1,38 +1,50 @@
 package com.chilakacherla.research.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
-@Table(name = "community_blood_donors")
 public class BloodDonor {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String donorName;
-    private String bloodGroup; // A+, B+, O+, AB+, etc.
+    private String name;
+    private String bloodGroup; // A+, B+, O+, AB+, O-, A-, B-, AB-
     private String phone;
     private Integer age;
-    private String locality;
-    private Boolean available = true;
+    private String locality; // Habitation / Locality
+    private String lastDonatedMonth;
+    private boolean available = true;
 
     public BloodDonor() {}
 
-    public BloodDonor(String donorName, String bloodGroup, String phone, Integer age, String locality) {
-        this.donorName = donorName;
+    public BloodDonor(String name, String bloodGroup, String phone, Integer age, String locality) {
+        this.name = name;
         this.bloodGroup = bloodGroup;
         this.phone = phone;
         this.age = age;
         this.locality = locality;
+        this.lastDonatedMonth = "Eligible Now";
         this.available = true;
     }
 
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+    public BloodDonor(String name, String bloodGroup, String phone, String locality, String lastDonatedMonth, boolean available) {
+        this.name = name;
+        this.bloodGroup = bloodGroup;
+        this.phone = phone;
+        this.locality = locality;
+        this.lastDonatedMonth = lastDonatedMonth;
+        this.available = available;
+    }
 
-    public String getDonorName() { return donorName; }
-    public void setDonorName(String donorName) { this.donorName = donorName; }
+    public Long getId() { return id; }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+    public String getDonorName() { return name; }
+    public void setDonorName(String name) { this.name = name; }
 
     public String getBloodGroup() { return bloodGroup; }
     public void setBloodGroup(String bloodGroup) { this.bloodGroup = bloodGroup; }
@@ -45,7 +57,12 @@ public class BloodDonor {
 
     public String getLocality() { return locality; }
     public void setLocality(String locality) { this.locality = locality; }
+    public String getHabitation() { return locality; }
+    public void setHabitation(String locality) { this.locality = locality; }
 
-    public Boolean getAvailable() { return available; }
-    public void setAvailable(Boolean available) { this.available = available; }
+    public String getLastDonatedMonth() { return lastDonatedMonth; }
+    public void setLastDonatedMonth(String lastDonatedMonth) { this.lastDonatedMonth = lastDonatedMonth; }
+
+    public boolean isAvailable() { return available; }
+    public void setAvailable(boolean available) { this.available = available; }
 }

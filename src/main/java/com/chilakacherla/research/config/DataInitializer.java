@@ -65,8 +65,24 @@ public class DataInitializer implements CommandLineRunner {
     @Autowired
     private EducatedCandidateRepository educatedCandidateRepository;
 
+    @Autowired
+    private MandiRateRepository mandiRateRepository;
+
+    @Autowired
+    private JobAlertRepository jobAlertRepository;
+
+    @Autowired
+    private NriContributorRepository nriContributorRepository;
+
+    @Autowired
+    private VillageEventRepository villageEventRepository;
+
     @Override
     public void run(String... args) throws Exception {
+        seedInitialData();
+    }
+
+    private void seedInitialData() {
 
         // 1. OFFICIAL VILLAGE IDENTITY (Level 1 Official - Govt Records)
         ResearchRecord identityRecord = new ResearchRecord(
@@ -454,5 +470,33 @@ public class DataInitializer implements CommandLineRunner {
         scheduleRepository.save(new ResearchSchedule("Jobs & Employment Aggregation", Category.JOBS, ScheduleFrequency.DAILY, LocalDate.now()));
         scheduleRepository.save(new ResearchSchedule("Government Schemes & Programs", Category.SCHEMES, ScheduleFrequency.WEEKLY, LocalDate.now().minusDays(3)));
         scheduleRepository.save(new ResearchSchedule("Voter List & Polling Directory", Category.ELECTION, ScheduleFrequency.MONTHLY, LocalDate.now().minusDays(10)));
+
+        // 19. NEXT AFIELD MANDI MARKET COMMODITY RATES
+        mandiRateRepository.save(new MandiRate("Red Chili (Teja)", "Grade A Quality", "Dornala Market Yard", 19200.0, 450.0, "HIGHER", LocalDate.now()));
+        mandiRateRepository.save(new MandiRate("Cotton (MCU-5)", "Long Staple", "Markapur Market Yard", 7650.0, 120.0, "HIGHER", LocalDate.now()));
+        mandiRateRepository.save(new MandiRate("Bengal Gram (Chana)", "Desi Medium", "Yerragondapalem Market", 6200.0, 0.0, "STABLE", LocalDate.now()));
+        mandiRateRepository.save(new MandiRate("Paddy (BPT 5204)", "Sona Masoori", "Ongole Mandi", 2350.0, -30.0, "LOWER", LocalDate.now()));
+
+        // 20. EMERGENCY BLOOD DONORS DIRECTORY
+        donorRepository.save(new BloodDonor("K. Mahendra", "O+", "+91 99890 12345", "Chilakacherla East", "Eligible Now", true));
+        donorRepository.save(new BloodDonor("M. Tirupataiah", "A+", "+91 94402 77112", "Chilakacherla West", "Eligible Now", true));
+        donorRepository.save(new BloodDonor("P. Satyanarayana", "B+", "+91 98663 99887", "Chilakacherla Colony", "Eligible Now", true));
+        donorRepository.save(new BloodDonor("G. Suresh", "AB+", "+91 97018 22334", "Chilakacherla Colony", "Eligible Now", true));
+        donorRepository.save(new BloodDonor("T. Rajesh", "O- (Universal)", "+91 94411 77665", "Panukumadugu", "Eligible Now", true));
+
+        // 21. JOB NOTIFICATIONS & NEXT AFIELD INTERNSHIPS
+        jobAlertRepository.save(new JobAlert("AP Sachivalayam Digital Assistant", "AP Panchayat Raj Dept", "GOVT_JOB", "B.Tech / Diploma (CS/IT/ECE)", "15th September 2026", "https://gramasachivalayam.ap.gov.in"));
+        jobAlertRepository.save(new JobAlert("AgriTech Data & AI Intern", "Next Afield", "INTERNSHIP", "Graduate / B.Tech / Agri B.Sc", "30th September 2026", "https://www.nextafield.co.in/careers"));
+        jobAlertRepository.save(new JobAlert("Railway Junior Engineer (JE)", "Indian Railways (SCR)", "GOVT_JOB", "Diploma / B.Tech Engineering", "10th October 2026", "https://rrbsecunderabad.gov.in"));
+
+        // 22. CHILAKACHERLA NRI CONNECT & DEVELOPMENT FUND
+        nriContributorRepository.save(new NriContributor("K. Venkateswarlu & Family", "Dallas, Texas (USA)", "Chilakacherla East", "Solar Streetlight Grid (25 Poles)", 150000.0, "COMPLETED"));
+        nriContributorRepository.save(new NriContributor("M. Subbaiah", "London (United Kingdom)", "Chilakacherla Colony", "Digital Smart Classroom for MPPS School", 120000.0, "COMPLETED"));
+        nriContributorRepository.save(new NriContributor("P. Srinivasulu", "Dubai (UAE)", "Yeguva Cherlo Palle", "Automatic RO Mineral Water Plant", 85000.0, "IN_PROGRESS"));
+
+        // 23. VILLAGE CULTURAL HERITAGE & FESTIVAL CALENDAR
+        villageEventRepository.save(new VillageEvent("Sri Rama Navami Grama Tirunallu", "TEMPLE_FESTIVAL", "18th April 2026", "Sri Rama Temple Premises", "Village Festival Committee", "Annual temple procession, Annadhanam, and traditional Kolatam performances by local youth."));
+        villageEventRepository.save(new VillageEvent("Chilakacherla Premier League (Cricket)", "SPORTS_TOURNAMENT", "15th August 2026", "MPPS School Ground", "Chilakacherla Youth Association", "Inter-ward 8-a-side cricket tournament with trophy and prizes for local teams."));
+        villageEventRepository.save(new VillageEvent("Monsoon Grama Sabha & Veligonda Review", "GRAMA_SABHA", "25th August 2026", "Gram Sachivalayam Hall", "Sarpanch & Panchayat Secretary", "Open public assembly to review canal distribution lines and monsoon road maintenance."));
     }
 }

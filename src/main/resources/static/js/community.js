@@ -43,12 +43,15 @@ function initCommunityPortal() {
     loadNotices();
     loadRecentGrievances();
     loadRbkStocks();
+    loadMandiRates();
     loadMarketplace();
     loadCraftsmen();
     loadBloodDonors();
     loadJobs();
     loadSchemes();
     loadPanchayatFunds();
+    loadNriConnect();
+    loadVillageEvents();
     loadVoterRecords();
     loadWardMembers();
     loadVoterMembers();
@@ -711,6 +714,110 @@ window.closeFounderModal = function() {
         modal.style.setProperty('display', 'none', 'important');
     }
 };
+
+function loadMandiRates() {
+    fetch('/api/v1/community/mandi-rates')
+        .then(res => res.json())
+        .then(rates => {
+            const container = document.getElementById('mandiRatesGridContainer');
+            if (!container) return;
+            container.innerHTML = '';
+            rates.forEach(r => {
+                const trendIcon = r.status === 'HIGHER' ? 'fa-arrow-trend-up' : (r.status === 'LOWER' ? 'fa-arrow-trend-down' : 'fa-minus');
+                const trendCss = r.status === 'HIGHER' ? 'var(--accent-green)' : (r.status === 'LOWER' ? 'var(--accent-red)' : 'var(--accent-amber)');
+                const card = document.createElement('div');
+                card.className = 'record-card';
+                card.innerHTML = `
+                    <div class="card-top">
+                        <span class="cat-badge">${r.variety}</span>
+                        <span style="color:${trendCss}; font-weight:700; font-size:0.8rem;"><i class="fa-solid ${trendIcon}"></i> ${r.status}</span>
+                    </div>
+                    <h3 style="color:var(--text-bright); font-size:1.1rem;">${r.cropName}</h3>
+                    <div style="font-size:1.8rem; font-weight:800; color:var(--accent-gold); font-family:var(--font-heading); margin:0.4rem 0;">₹${r.pricePerQuintal.toLocaleString()} <span style="font-size:0.85rem; font-weight:500; color:var(--text-muted);">/ Quintal</span></div>
+                    <div style="font-size:0.8rem; color:var(--text-muted);"><i class="fa-solid fa-location-dot"></i> ${r.marketLocation}</div>
+                `;
+                container.appendChild(card);
+            });
+        });
+}
+
+function calculateFertilizer() {
+    const crop = document.getElementById('calcCrop').value;
+    const acres = parseFloat(document.getElementById('calcAcres').value) || 1;
+    let urea = 0, dap = 0, mop = 0;
+
+    if (crop === 'Chili') { urea = Math.round(acres * 3.5); dap = Math.round(acres * 2.0); mop = Math.round(acres * 1.5); }
+    else if (crop === 'Cotton') { urea = Math.round(acres * 2.5); dap = Math.round(acres * 1.5); mop = Math.round(acres * 1.0); }
+    else if (crop === 'Bengal Gram') { urea = Math.round(acres * 1.0); dap = Math.round(acres * 1.5); mop = Math.round(acres * 0.5); }
+    else { urea = Math.round(acres * 2.0); dap = Math.round(acres * 1.5); mop = Math.round(acres * 1.0); }
+
+    const resDiv = document.getElementById('calcResult');
+    if (resDiv) {
+        resDiv.style.display = 'block';
+        resDiv.innerHTML = `
+            <strong><i class="fa-solid fa-flask"></i> Fertilizer Dose Recommendation (${acres} Acre ${crop}):</strong>
+            <ul style="margin-top:0.4rem; padding-left:1.2rem; font-size:0.88rem; color:var(--text-bright);">
+                <li><strong>Urea (Nitrogen):</strong> ${urea} Bags (50kg)</li>
+                <li><strong>DAP (Di-Ammonium Phosphate):</strong> ${dap} Bags (50kg)</li>
+                <li><strong>MOP (Muriate of Potash):</strong> ${mop} Bags (50kg)</li>
+            </ul>
+            <span style="font-size:0.78rem; color:var(--accent-green); display:block; margin-top:0.4rem;"><i class="fa-solid fa-check"></i> Available at Rythu Bharosa Kendra (RBK) Dornala</span>
+        `;
+    }
+}
+
+function loadNriConnect() {
+    fetch('/api/v1/community/nri-connect')
+        .then(res => res.json())
+        .then(nriList => {
+            const container = document.getElementById('nriGridContainer');
+            if (!container) return;
+            container.innerHTML = '';
+            nriList.forEach(n => {
+                const card = document.createElement('div');
+                card.className = 'craftsman-card';
+                card.innerHTML = `
+                    <div>
+                        <div class="cm-trade" style="background:rgba(2, 132, 199, 0.15); color:var(--accent-blue);"><i class="fa-solid fa-plane"></i> ${n.countryLocation}</div>
+                        <h4 style="color:var(--text-bright); font-size:1.05rem; margin-top:0.3rem;">${n.name}</h4>
+                        <div style="font-size:0.8rem; color:var(--text-muted);">Native: ${n.nativeHabitation}</div>
+                        <div style="font-size:0.85rem; color:var(--accent-green); font-weight:700; margin-top:0.4rem;"><i class="fa-solid fa-hand-holding-heart"></i> ${n.projectSponsored}</div>
+                    </div>
+                    <div style="text-align:right;">
+                        <strong style="font-size:1.1rem; color:var(--accent-gold);">₹${n.contributionAmount.toLocaleString()}</strong>
+                        <span class="tag-badge glow" style="font-size:0.72rem; display:block; margin-top:0.3rem;">${n.status}</span>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        });
+}
+
+function loadVillageEvents() {
+    fetch('/api/v1/community/events')
+        .then(res => res.json())
+        .then(events => {
+            const container = document.getElementById('eventsGridContainer');
+            if (!container) return;
+            container.innerHTML = '';
+            events.forEach(e => {
+                const card = document.createElement('div');
+                card.className = 'record-card';
+                card.style.marginBottom = '1rem';
+                card.innerHTML = `
+                    <div class="card-top">
+                        <span class="cat-badge">${e.category.replace(/_/g, ' ')}</span>
+                        <span style="font-size:0.82rem; color:var(--accent-gold); font-weight:700;"><i class="fa-solid fa-calendar"></i> ${e.eventDate}</span>
+                    </div>
+                    <h3 style="color:var(--text-bright); font-size:1.1rem;">${e.eventTitle}</h3>
+                    <p style="font-size:0.82rem; color:var(--accent-blue); font-weight:600;"><i class="fa-solid fa-location-dot"></i> ${e.venue} | Org: ${e.organizer}</p>
+                    <p style="font-size:0.85rem; color:var(--text-muted); margin-top:0.4rem;">${e.description}</p>
+                `;
+                container.appendChild(card);
+            });
+        });
+}
+
 
 
 

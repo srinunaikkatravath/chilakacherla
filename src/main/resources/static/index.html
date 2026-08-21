@@ -197,7 +197,14 @@
                             <h4>Sri Rama & Chennakesava Swamy Temple</h4>
                             <p>Historic village temple decorated for annual Brahmotsavam Jatara festival, serving as the cultural heart of Chilakacherla.</p>
                         </div>
-                    </div>
+            <!-- Village Cultural Heritage & Festival Calendar -->
+            <div class="card-box mb-4">
+                <div class="card-box-header">
+                    <h3><i class="fa-solid fa-calendar-days"></i> Village Cultural Heritage, Festival & Sports Calendar</h3>
+                    <span class="tag-badge glow">Grama Sabha & Cultural Events</span>
+                </div>
+                <div class="records-grid" id="eventsGridContainer">
+                    <!-- Populated dynamically by community.js -->
                 </div>
             </div>
 
@@ -314,6 +321,20 @@
             <!-- Schemes Cards Grid -->
             <div class="schemes-grid mb-4" id="schemesGridContainer">
                 <!-- Populated dynamically by community.js -->
+            </div>
+
+            <!-- Chilakacherla NRI Connect & Development Fund -->
+            <div class="card-box mb-4">
+                <div class="card-box-header">
+                    <h3><i class="fa-solid fa-globe"></i> Chilakacherla & Yeguva Cherlo Palle NRI Connect & Village Development Fund</h3>
+                    <span class="tag-badge glow">Global NRI Network</span>
+                </div>
+                <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;">
+                    Non-resident villagers living abroad (USA, UK, UAE, Hyderabad, Bengaluru) sponsoring solar streetlight grids, digital smart classrooms, and RO mineral water plants.
+                </p>
+                <div class="craftsman-grid" id="nriGridContainer">
+                    <!-- Populated dynamically by community.js -->
+                </div>
             </div>
 
         </section>
@@ -444,6 +465,41 @@
             <div class="section-title">
                 <h2><i class="fa-solid fa-wheat-awn"></i> Raithu Bharosa Kendra (RBK) & Farmer Helper</h2>
                 <p>Live fertilizer & seed stock levels, agricultural machinery rentals, and crop market rates.</p>
+            </div>
+
+            <!-- Next Afield Mandi Commodity Prices & Soil Calculator -->
+            <div class="card-box mb-4">
+                <div class="card-box-header">
+                    <h3><i class="fa-solid fa-chart-line"></i> Next Afield AgTech — Live Mandi Commodity Market Prices</h3>
+                    <span class="tag-badge glow">Real-Time Mandi Rates</span>
+                </div>
+                <div class="records-grid" id="mandiRatesGridContainer">
+                    <!-- Populated dynamically by community.js -->
+                </div>
+            </div>
+
+            <div class="card-box mb-4">
+                <div class="card-box-header">
+                    <h3><i class="fa-solid fa-calculator"></i> Soil & Fertilizer Dose Calculator</h3>
+                    <span class="tag-badge glow">RBK Dornala Recommendation</span>
+                </div>
+                <div class="form-row" style="align-items: flex-end; gap: 1rem;">
+                    <div class="form-group flex-1">
+                        <label>Select Crop Type</label>
+                        <select id="calcCrop" style="padding: 0.6rem; border-radius: 10px; background: var(--card-bg-solid); color: var(--text-bright); border: 1px solid var(--card-border); width: 100%;">
+                            <option value="Chili">Red Chili (Teja / 334)</option>
+                            <option value="Cotton">Cotton (MCU-5)</option>
+                            <option value="Bengal Gram">Bengal Gram (Chana)</option>
+                            <option value="Paddy">Paddy (Sona Masoori)</option>
+                        </select>
+                    </div>
+                    <div class="form-group flex-1">
+                        <label>Land Acreage (Acres)</label>
+                        <input type="number" id="calcAcres" value="1" min="0.5" step="0.5" style="padding: 0.6rem; border-radius: 10px; background: var(--card-bg-solid); color: var(--text-bright); border: 1px solid var(--card-border); width: 100%;">
+                    </div>
+                    <button class="btn btn-success" onclick="calculateFertilizer()" style="margin-bottom: 0.2rem;"><i class="fa-solid fa-flask"></i> Calculate Fertilizer Dose</button>
+                </div>
+                <div id="calcResult" style="display: none; margin-top: 1rem; padding: 1rem; background: rgba(13, 148, 136, 0.08); border: 1px solid rgba(13, 148, 136, 0.25); border-radius: 12px;"></div>
             </div>
 
             <!-- RBK Fertilizer & Seed Inventory Table -->
