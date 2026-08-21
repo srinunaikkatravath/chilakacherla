@@ -916,3 +916,139 @@ body {
     .form-row { flex-direction: column; gap: 0.8rem; }
     .schemes-grid, .funds-grid, .craftsmen-grid, .village-gallery-grid { grid-template-columns: 1fr; }
 }
+
+/* ==================== PORTAL FOOTER STYLING ==================== */
+.portal-footer {
+    background: var(--card-bg-solid);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 2.5rem 2rem 1.2rem 2rem;
+    box-shadow: var(--shadow-sm);
+    margin-top: 3rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 900px) {
+    .footer-row {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+    }
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-bright);
+    margin-bottom: 0.8rem;
+}
+
+.footer-logo i {
+    color: var(--accent-gold);
+    font-size: 1.5rem;
+}
+
+.footer-desc {
+    font-size: 0.86rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+}
+
+.footer-badges {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.footer-heading {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-bright);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-heading i {
+    color: var(--accent-blue);
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.footer-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.88rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-links a i {
+    font-size: 0.7rem;
+    color: var(--accent-blue);
+}
+
+.footer-links a:hover {
+    color: var(--accent-blue);
+    transform: translateX(4px);
+}
+
+.contact-col .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 0.86rem;
+    color: var(--text-main);
+    margin-bottom: 0.7rem;
+}
+
+.contact-col .contact-item i {
+    color: var(--accent-green);
+    width: 20px;
+    text-align: center;
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--card-border);
+    padding-top: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.footer-credit strong {
+    color: var(--accent-cyan);
+    font-family: var(--font-heading);
+    letter-spacing: 0.4px;
+}
+
