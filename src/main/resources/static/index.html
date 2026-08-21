@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chilakacherla — Yeguva Cherlo Palle Gram Panchayat (523331)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Header & Emergency Bar -->
+    <header class="app-header">
+        <div class="top-emergency-bar">
+            <div class="emergency-container">
+                <div><i class="fa-solid fa-truck-medical"></i> <strong>Emergency 108</strong> | Health Sub-Centre: <strong>+91 94405 11223</strong></div>
+                <div class="emerg-pills">
+                    <a href="tel:+919440123456" class="emerg-pill"><i class="fa-solid fa-phone"></i> Sarpanch: +91 94401 23456</a>
+                    <a href="tel:+918594294811" class="emerg-pill"><i class="fa-solid fa-building-columns"></i> Sachivalayam: +91 85942 94811</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-container">
+            <div class="brand">
+                <div class="logo-icon"><i class="fa-solid fa-tree-city"></i></div>
+                <div>
+                    <h1>Chilakacherla & Chilakacherla Gudem Portal</h1>
+                    <p class="subtitle"><i class="fa-solid fa-location-dot"></i> <strong>Yeguva Cherlo Palle Gram Panchayat</strong> (GP Code: 235054) | Dornala Mandal, Prakasam Dist, AP | PIN: <strong>523331</strong></p>
+                </div>
+            </div>
+
+            <div class="header-actions">
+                <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeToggleBtn">
+                    <i class="fa-solid fa-moon" id="themeIcon"></i>
+                    <span id="themeText">Dark Mode</span>
+                </button>
+                <div class="live-weather-badge">
+                    <i class="fa-solid fa-cloud-sun-rain"></i>
+                    <span>Chilakacherla <strong>31°C</strong></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation Bar -->
+        <nav class="main-nav-bar">
+            <div class="nav-container">
+                <button class="nav-tab active" onclick="switchCommunityTab('home')">
+                    <i class="fa-solid fa-bullhorn"></i> Noticeboard & Profile
+                </button>
+                <button class="nav-tab" onclick="switchCommunityTab('schemes')">
+                    <i class="fa-solid fa-coins"></i> Schemes & Village Funds
+                </button>
+                <button class="nav-tab" onclick="switchCommunityTab('sachivalayam')">
+                    <i class="fa-solid fa-building-columns"></i> Sachivalayam & Grievances
+                </button>
+                <button class="nav-tab" onclick="switchCommunityTab('farmers')">
+                    <i class="fa-solid fa-wheat-awn"></i> Farmers & RBK Hub
+                </button>
+                <button class="nav-tab" onclick="switchCommunityTab('bazaar')">
+                    <i class="fa-solid fa-store"></i> Grama Bazaar
+                </button>
+                <button class="nav-tab" onclick="switchCommunityTab('health')">
+                    <i class="fa-solid fa-heart-pulse"></i> Health & Donors
+                </button>
+                <button class="nav-tab" onclick="switchCommunityTab('education')">
+                    <i class="fa-solid fa-graduation-cap"></i> Education & Jobs
+                </button>
+                <button class="nav-tab" onclick="switchCommunityTab('voter')">
+                    <i class="fa-solid fa-check-to-slot"></i> Voters & Elections
+                </button>
+                <button class="nav-tab admin-tab-btn" onclick="switchCommunityTab('research')">
+                    <i class="fa-solid fa-microscope"></i> Research Engine
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="main-content">
+
+        <!-- ==================== TAB 1: HOME & NOTICEBOARD ==================== -->
+        <section id="tabHome" class="tab-section active">
+            
+            <div class="perspective-container">
+                <div class="hero-community-card" style="background: linear-gradient(180deg, rgba(15, 23, 42, 0.72) 0%, rgba(15, 23, 42, 0.88) 100%), url('images/hero_chilakacherla.jpg') center/cover no-repeat;">
+                    <div class="hero-text">
+                        <div class="hero-tag"><i class="fa-solid fa-hands-holding-circle"></i> Official Yeguva Cherlo Palle Gram Panchayat Portal (PIN: 523331)</div>
+                        <h2 style="color: #ffffff; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">Chilakacherla, Chilakacherla Gudem & Yeguva Cherlo Palle</h2>
+                        <p style="color: #e2e8f0;">Complete official ecosystem for village public development funds, Poola Subbaiah Veligonda irrigation canal project, AP State & Central schemes, Sachivalayam grievances, and daily farmer mandi rates.</p>
+                        
+                        <!-- Quick Stats Badges -->
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+                            <div style="background: rgba(2, 132, 199, 0.25); backdrop-filter: blur(8px); border: 1px solid rgba(56, 189, 248, 0.4); padding: 0.6rem 1rem; border-radius: 12px;">
+                                <span style="font-size: 0.78rem; color: #cbd5e1; display: block;">Gram Panchayat Population</span>
+                                <strong style="font-size: 1.2rem; color: #38bdf8; font-family: var(--font-heading);">2,140 Residents</strong>
+                            </div>
+                            <div style="background: rgba(22, 163, 74, 0.25); backdrop-filter: blur(8px); border: 1px solid rgba(74, 222, 128, 0.4); padding: 0.6rem 1rem; border-radius: 12px;">
+                                <span style="font-size: 0.78rem; color: #cbd5e1; display: block;">Total Village Funds Received</span>
+                                <strong style="font-size: 1.2rem; color: #4ade80; font-family: var(--font-heading);">₹3.70 Crores</strong>
+                            </div>
+                            <div style="background: rgba(147, 51, 234, 0.25); backdrop-filter: blur(8px); border: 1px solid rgba(192, 132, 252, 0.4); padding: 0.6rem 1rem; border-radius: 12px;">
+                                <span style="font-size: 0.78rem; color: #cbd5e1; display: block;">Scheme Beneficiaries</span>
+                                <strong style="font-size: 1.2rem; color: #c084fc; font-family: var(--font-heading);">1,417 Enrolled</strong>
+                            </div>
+                        </div>
+
+                        <div class="hero-quick-buttons">
+                            <button class="btn btn-primary" onclick="switchCommunityTab('schemes')">
+                                <i class="fa-solid fa-coins"></i> View All Sector Funds (₹3.70 Cr)
+                            </button>
+                            <button class="btn btn-accent" onclick="switchCommunityTab('sachivalayam')">
+                                <i class="fa-solid fa-circle-exclamation"></i> Report Sachivalayam Grievance
+                            </button>
+                            <button class="btn btn-success" onclick="switchCommunityTab('farmers')">
+                                <i class="fa-solid fa-chart-line"></i> Mandi Rates & RBK Stock
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Habitations & Administrative Details Card -->
+            <div class="card-box mb-4">
+                <div class="card-box-header">
+                    <h3><i class="fa-solid fa-map-location-dot"></i> Yeguva Cherlo Palle Gram Panchayat Profile & Habitations</h3>
+                    <span class="tag-badge glow">Government Records</span>
+                </div>
+                <div class="staff-grid">
+                    <div style="background: var(--card-bg-solid); padding: 1rem; border-radius: 10px; border: 1px solid var(--card-border);">
+                        <strong style="color: var(--accent-blue);">Official Gram Panchayat:</strong>
+                        <p style="font-size: 0.95rem; font-weight: 700; color: var(--text-bright);">Yeguva Cherlo Palle Gram Panchayat</p>
+                        <span style="font-size: 0.78rem; color: var(--text-muted);">GP Code: 235054 | PIN: 523331</span>
+                    </div>
+                    <div style="background: var(--card-bg-solid); padding: 1rem; border-radius: 10px; border: 1px solid var(--card-border);">
+                        <strong style="color: var(--accent-cyan);">Included Habitations / Villages:</strong>
+                        <p style="font-size: 0.88rem; color: var(--text-muted);">1. Chilakacherla Main<br>2. Chilakacherla Gudem<br>3. Yeguva Cherlo Palle (Y. Cherlopalli)<br>4. Panukumadugu</p>
+                    </div>
+                    <div style="background: var(--card-bg-solid); padding: 1rem; border-radius: 10px; border: 1px solid var(--card-border);">
+                        <strong style="color: var(--accent-purple);">Mandal & District:</strong>
+                        <p style="font-size: 0.9rem; color: var(--text-bright);">Dornala Mandal, Prakasam District, Andhra Pradesh (PIN: 523331)</p>
+                    </div>
+                    <div style="background: var(--card-bg-solid); padding: 1rem; border-radius: 10px; border: 1px solid var(--card-border);">
+                        <strong style="color: var(--accent-amber);">Major Irrigation Project:</strong>
+                        <p style="font-size: 0.88rem; color: var(--text-muted);">Poola Subbaiah Veligonda Project Canal Network (850 Acres Ayacut)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visual Village Photo Showcase Gallery -->
+            <div class="card-box mb-4">
+                <div class="card-box-header">
+                    <h3><i class="fa-solid fa-camera-retro"></i> Chilakacherla & Yeguva Cherlo Palle Visual Showcase</h3>
+                    <span class="tag-badge glow">High Resolution Gallery</span>
+                </div>
+                <div class="village-gallery-grid">
+                    <div class="gallery-card">
+                        <div class="gallery-img-wrapper">
+                            <img src="images/hero_chilakacherla.jpg" alt="Chilakacherla Panoramic View" class="gallery-img">
+                            <div class="gallery-tag">Village Overview</div>
+                        </div>
+                        <div class="gallery-info">
+                            <h4>Chilakacherla Digital Village</h4>
+                            <p>Panoramic aerial view of Chilakacherla main village, paved roadways, solar lighting, and surrounding red chili farmland in Prakasam District.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-card">
+                        <div class="gallery-img-wrapper">
+                            <img src="images/veligonda_canal.jpg" alt="Veligonda Irrigation Canal" class="gallery-img">
+                            <div class="gallery-tag">Irrigation Canal</div>
+                        </div>
+                        <div class="gallery-info">
+                            <h4>Poola Subbaiah Veligonda Canal</h4>
+                            <p>Concrete-lined distributary canal bringing fresh water from Veligonda project to 850 acres of agricultural land in Chilakacherla & Yeguva Cherlo Palle.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-card">
+                        <div class="gallery-img-wrapper">
+                            <img src="images/sachivalayam_rbk.jpg" alt="Gram Sachivalayam and RBK" class="gallery-img">
+                            <div class="gallery-tag">Digital Sachivalayam</div>
+                        </div>
+                        <div class="gallery-info">
+                            <h4>Gram Sachivalayam & RBK Center</h4>
+                            <p>Integrated administrative hub providing public online services, grievance tracking, and real-time fertilizer stock updates for farmers.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-card">
+                        <div class="gallery-img-wrapper">
+                            <img src="images/temple_culture.jpg" alt="Sri Rama Swamy Temple Jatara" class="gallery-img">
+                            <div class="gallery-tag">Cultural Heritage</div>
+                        </div>
+                        <div class="gallery-info">
+                            <h4>Sri Rama & Chennakesava Swamy Temple</h4>
+                            <p>Historic village temple decorated for annual Brahmotsavam Jatara festival, serving as the cultural heart of Chilakacherla.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-2col">
+                <!-- Panchayati Announcements -->
+                <div class="card-box tilt-hover">
+                    <div class="card-box-header">
+                        <h3><i class="fa-solid fa-scroll"></i> Panchayati & Community Notices</h3>
+                        <span class="tag-badge glow">Live Updates</span>
+                    </div>
+                    <div id="noticesListContainer" class="notices-list">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+
+                <!-- Mandi Rates & Quick Services Sidebar -->
+                <div class="sidebar-column">
+                    <!-- Daily Mandi Prices Widget -->
+                    <div class="widget-card gold">
+                        <h4><i class="fa-solid fa-seedling"></i> Dornala AMC Daily Mandi Prices</h4>
+                        <div class="mandi-price-list">
+                            <div class="mandi-item">
+                                <span>Chili (Teja Variety)</span>
+                                <strong>₹18,500 / qtl</strong>
+                            </div>
+                            <div class="mandi-item">
+                                <span>Cotton (Long Staple)</span>
+                                <strong>₹7,400 / qtl</strong>
+                            </div>
+                            <div class="mandi-item">
+                                <span>Bengal Gram (Chickpeas)</span>
+                                <strong>₹5,800 / qtl</strong>
+                            </div>
+                            <div class="mandi-item">
+                                <span>Red Gram (Pigeon Pea)</span>
+                                <strong>₹8,200 / qtl</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Village Contacts -->
+                    <div class="widget-card">
+                        <h4><i class="fa-solid fa-address-book"></i> Key Official Helplines</h4>
+                        <div class="contact-quick-list">
+                            <div class="cq-item">
+                                <div>
+                                    <strong>K. Venkateswarlu</strong>
+                                    <span class="subtext">Gram Panchayat Sarpanch</span>
+                                </div>
+                                <a href="tel:+919440123456" class="btn btn-sm btn-primary"><i class="fa-solid fa-phone"></i> Call</a>
+                            </div>
+                            <div class="cq-item">
+                                <div>
+                                    <strong>M. Radhika</strong>
+                                    <span class="subtext">Panchayat Secretary (GS)</span>
+                                </div>
+                                <a href="tel:+918594294811" class="btn btn-sm btn-primary"><i class="fa-solid fa-phone"></i> Call</a>
+                            </div>
+                            <div class="cq-item">
+                                <div>
+                                    <strong>Village Agriculture Assistant</strong>
+                                    <span class="subtext">RBK Officer</span>
+                                </div>
+                                <a href="tel:+919490211223" class="btn btn-sm btn-success"><i class="fa-solid fa-wheat-awn"></i> Call</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ==================== TAB 2: SCHEMES & PANCHAYAT FUNDS ECOSYSTEM ==================== -->
+        <section id="tabSchemes" class="tab-section" style="display: none;">
+            
+            <div class="section-title-between mb-3">
+                <div>
+                    <h2><i class="fa-solid fa-coins"></i> Total Funds Received & Government Schemes Ecosystem</h2>
+                    <p>Accurate, real data on public funds received across all sectors (BT Roads, Veligonda Canal, MGNREGS, Jal Jeevan, 15th FC Grants) totaling ₹3.70 Crores for Yeguva Cherlo Palle Gram Panchayat (PIN: 523331).</p>
+                </div>
+                <div class="search-box-row" style="max-width: 320px;">
+                    <input type="text" id="schemeTrackInput" placeholder="Enter Scheme Application ID (e.g. CHK-SCH-5001)">
+                    <button class="btn btn-accent" onclick="trackSchemeApplication()">Track</button>
+                </div>
+            </div>
+
+            <!-- Track Result Banner -->
+            <div id="schemeTrackResult" class="card-box mb-3" style="display: none;"></div>
+
+            <!-- Gram Panchayat Funds Utilization & Expenditure Section -->
+            <div class="card-box mb-4">
+                <div class="card-box-header">
+                    <h3><i class="fa-solid fa-chart-pie"></i> Yeguva Cherlo Palle GP Public Development Funds Received (Total: ₹3.70 Crores)</h3>
+                    <span class="tag-badge glow">Panchayat Public Audit</span>
+                </div>
+                <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;">
+                    Transparent breakdown of PMGSY BT Road construction, Poola Subbaiah Veligonda Project distributary canal lining, MGNREGS tank desilting, Jal Jeevan tap water connections, 15th FC grants, and local tax revenues.
+                </p>
+                <div class="funds-grid" id="fundsGridContainer">
+                    <!-- Populated dynamically by community.js -->
+                </div>
+            </div>
+
+            <!-- Scheme Category Filter Bar -->
+            <div class="bazaar-filter-bar mb-3">
+                <button class="bazaar-btn active" onclick="filterSchemes('ALL')">All Schemes</button>
+                <button class="bazaar-btn" onclick="filterSchemes('AGRICULTURE')"><i class="fa-solid fa-wheat-awn"></i> Agriculture</button>
+                <button class="bazaar-btn" onclick="filterSchemes('EDUCATION')"><i class="fa-solid fa-graduation-cap"></i> Education</button>
+                <button class="bazaar-btn" onclick="filterSchemes('HEALTH')"><i class="fa-solid fa-heart-pulse"></i> Health</button>
+                <button class="bazaar-btn" onclick="filterSchemes('PENSION')"><i class="fa-solid fa-hands-holding"></i> Pension</button>
+                <button class="bazaar-btn" onclick="filterSchemes('PANCHAYAT')"><i class="fa-solid fa-faucet-drip"></i> Panchayat / Water</button>
+            </div>
+
+            <!-- Schemes Cards Grid -->
+            <div class="schemes-grid mb-4" id="schemesGridContainer">
+                <!-- Populated dynamically by community.js -->
+            </div>
+
+        </section>
+
+        <!-- ==================== TAB 3: SACHIVALAYAM & GRIEVANCES ==================== -->
+        <section id="tabSachivalayam" class="tab-section" style="display: none;">
+            
+            <div class="section-title">
+                <h2><i class="fa-solid fa-building-columns"></i> Gram Sachivalayam & Grievance Redressal</h2>
+                <p>Report village public issues (Streetlights, Water Supply, Drainage, Garbage, Roads) to Yeguva Cherlo Palle Gram Sachivalayam and track resolution status in real-time.</p>
+            </div>
+
+            <div class="grid-2col">
+                <!-- Submit Grievance Form -->
+                <div class="card-box tilt-hover">
+                    <div class="card-box-header">
+                        <h3><i class="fa-solid fa-paper-plane"></i> Report Village Issue / Grievance</h3>
+                    </div>
+                    <form id="grievanceForm" onsubmit="handleGrievanceSubmit(event)">
+                        <div class="form-group mb-3">
+                            <label>Category of Issue</label>
+                            <select id="grvCategory" required>
+                                <option value="Streetlights">Streetlights / Electrical Repairs</option>
+                                <option value="Water Supply">Drinking Water Pipeline Leakage</option>
+                                <option value="Drainage">Sanitation & Drainage Blockage</option>
+                                <option value="Garbage">Garbage & Cleanliness</option>
+                                <option value="Roads">Road Damage & Potholes</option>
+                                <option value="General">Other Public Issue</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group flex-1">
+                                <label>Your Full Name</label>
+                                <input type="text" id="grvName" placeholder="e.g. K. Rama Rao" required>
+                            </div>
+                            <div class="form-group flex-1">
+                                <label>Phone Number</label>
+                                <input type="text" id="grvPhone" placeholder="+91 XXXXX XXXXX" required>
+                            </div>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label>Exact Location / Ward Number / Habitation</label>
+                            <input type="text" id="grvLocation" placeholder="e.g. Chilakacherla Temple Street near Pole #12, Ward 3" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label>Description of Problem</label>
+                            <textarea id="grvDescription" rows="3" placeholder="Describe the issue in detail..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <i class="fa-solid fa-paper-plane"></i> Submit Grievance & Get Tracking ID
+                        </button>
+                    </form>
+                    <div id="grievanceSubmitResult" class="form-result-box" style="display: none;"></div>
+                </div>
+
+                <!-- Track Grievance Status -->
+                <div class="sidebar-column">
+                    <div class="card-box">
+                        <div class="card-box-header">
+                            <h3><i class="fa-solid fa-magnifying-glass"></i> Track Grievance Status</h3>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label>Enter Tracking ID</label>
+                            <div class="search-box-row">
+                                <input type="text" id="trackIdInput" placeholder="e.g. CHK-GRV-1001">
+                                <button class="btn btn-accent" onclick="trackGrievanceStatus()">Track</button>
+                            </div>
+                        </div>
+                        <div id="trackResultBox" class="track-status-display" style="display: none;"></div>
+                    </div>
+
+                    <!-- Recent Grievances List -->
+                    <div class="card-box">
+                        <h4><i class="fa-solid fa-list-check"></i> Recent Village Grievances</h4>
+                        <div id="recentGrievancesList" class="recent-grv-list">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sachivalayam Staff Directory -->
+            <div class="card-box mt-4">
+                <div class="card-box-header">
+                    <h3><i class="fa-solid fa-id-card"></i> Yeguva Cherlo Palle Gram Sachivalayam Official Contacts</h3>
+                </div>
+                <div class="staff-grid">
+                    <div class="staff-card">
+                        <div class="staff-avatar"><i class="fa-solid fa-user-tie"></i></div>
+                        <div class="staff-info">
+                            <h4>K. Venkateswarlu</h4>
+                            <p class="role">Sarpanch (Yeguva Cherlo Palle GP)</p>
+                            <a href="tel:+919440123456" class="btn btn-sm btn-primary"><i class="fa-solid fa-phone"></i> Call Sarpanch</a>
+                        </div>
+                    </div>
+                    <div class="staff-card">
+                        <div class="staff-avatar"><i class="fa-solid fa-user-gear"></i></div>
+                        <div class="staff-info">
+                            <h4>M. Radhika</h4>
+                            <p class="role">Panchayat Secretary (GS)</p>
+                            <a href="tel:+918594294811" class="btn btn-sm btn-primary"><i class="fa-solid fa-phone"></i> Call Secretary</a>
+                        </div>
+                    </div>
+                    <div class="staff-card">
+                        <div class="staff-avatar"><i class="fa-solid fa-wheat-awt"></i></div>
+                        <div class="staff-info">
+                            <h4>Village Agriculture Asst.</h4>
+                            <p class="role">RBK Officer</p>
+                            <a href="tel:+919490211223" class="btn btn-sm btn-success"><i class="fa-solid fa-phone"></i> Call VAA</a>
+                        </div>
+                    </div>
+                    <div class="staff-card">
+                        <div class="staff-avatar"><i class="fa-solid fa-laptop-code"></i></div>
+                        <div class="staff-info">
+                            <h4>Digital Assistant</h4>
+                            <p class="role">Online Services & Certificates</p>
+                            <a href="tel:+918594294812" class="btn btn-sm btn-primary"><i class="fa-solid fa-phone"></i> Call Assistant</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ==================== TAB 4: FARMERS & RBK HUB ==================== -->
+        <section id="tabFarmers" class="tab-section" style="display: none;">
+            
+            <div class="section-title">
+                <h2><i class="fa-solid fa-wheat-awn"></i> Raithu Bharosa Kendra (RBK) & Farmer Helper</h2>
+                <p>Live fertilizer & seed stock levels, agricultural machinery rentals, and crop market rates.</p>
+            </div>
+
+            <!-- RBK Fertilizer & Seed Inventory Table -->
+            <div class="card-box mb-4">
+                <div class="card-box-header">
+                    <h3><i class="fa-solid fa-boxes-stacked"></i> Live Stock at Yeguva Cherlo Palle / Chilakacherla RBK Center</h3>
+                    <span class="tag-badge glow">Updated Today</span>
+                </div>
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Item / Fertilizer Name</th>
+                                <th>Category</th>
+                                <th>Stock Available</th>
+                                <th>Price per Bag</th>
+                                <th>RBK Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="rbkStockTableBody">
+                            <!-- Populated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Mandi Rates & Equipment Rental Pool -->
+            <div class="grid-2col">
+                <!-- Dornala & Markapur Market Yard Prices -->
+                <div class="card-box">
+                    <div class="card-box-header">
+                        <h3><i class="fa-solid fa-chart-line"></i> Daily Mandi Commodity Prices</h3>
+                    </div>
+                    <div class="mandi-detailed-list">
+                        <div class="mandi-detail-card">
+                            <div class="crop-icon"><i class="fa-solid fa-pepper-hot"></i></div>
+                            <div class="crop-info">
+                                <h4>Chili (Teja Variety)</h4>
+                                <span class="market-name">Dornala Agricultural Market Yard</span>
+                            </div>
+                            <div class="crop-price">
+                                <strong>₹18,500</strong>
+                                <span class="unit">per Quintal</span>
+                            </div>
+                        </div>
+                        <div class="mandi-detail-card">
+                            <div class="crop-icon"><i class="fa-solid fa-plant-wilt"></i></div>
+                            <div class="crop-info">
+                                <h4>Cotton (Long Staple)</h4>
+                                <span class="market-name">Markapur Market Yard</span>
+                            </div>
+                            <div class="crop-price">
+                                <strong>₹7,400</strong>
+                                <span class="unit">per Quintal</span>
+                            </div>
+                        </div>
+                        <div class="mandi-detail-card">
+                            <div class="crop-icon"><i class="fa-solid fa-seedling"></i></div>
+                            <div class="crop-info">
+                                <h4>Bengal Gram (Chickpeas)</h4>
+                                <span class="market-name">Dornala Market Yard</span>
+                            </div>
+                            <div class="crop-price">
+                                <strong>₹5,800</strong>
+                                <span class="unit">per Quintal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Farm Equipment Rental Pool -->
+                <div class="card-box">
+                    <div class="card-box-header">
+                        <h3><i class="fa-solid fa-tractor"></i> Tractor & Farm Equipment Sharing</h3>
+                    </div>
+                    <div class="equipment-list">
+                        <div class="equip-card">
+                            <div class="equip-icon"><i class="fa-solid fa-tractor"></i></div>
+                            <div class="equip-details">
+                                <h4>Mahindra 45 HP Tractor (With Rotavator)</h4>
+                                <p>Owner: <strong>K. Srinivasa Rao</strong> (+91 97012 33445)</p>
+                                <span class="rent-tag">₹900 / Hour</span>
+                            </div>
+                        </div>
+                        <div class="equip-card">
+                            <div class="equip-icon"><i class="fa-solid fa-spray-can-sparkles"></i></div>
+                            <div class="equip-details">
+                                <h4>Power Crop Sprayer Pump</h4>
+                                <p>Owner: <strong>M. Subbaiah</strong> (+91 98661 54321)</p>
+                                <span class="rent-tag">₹350 / Day</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ==================== TAB 5: GRAMA BAZAAR (MARKETPLACE) ==================== -->
+        <section id="tabBazaar" class="tab-section" style="display: none;">
+            
+            <div class="section-title-between mb-3">
+                <div>
+                    <h2><i class="fa-solid fa-store"></i> Grama Bazaar — Village Marketplace</h2>
+                    <p>Buy, sell, and rent local farm produce, livestock, dairy, and services directly from Chilakacherla & Yeguva Cherlo Palle villagers.</p>
+                </div>
+                <button class="btn btn-accent" onclick="openPostAdModal()">
+                    <i class="fa-solid fa-plus"></i> Post Free Ad / Item
+                </button>
+            </div>
+
+            <!-- Category Filter Pills -->
+            <div class="bazaar-filter-bar mb-3">
+                <button class="bazaar-btn active" onclick="filterBazaar('ALL')">All Ads</button>
+                <button class="bazaar-btn" onclick="filterBazaar('Produce')"><i class="fa-solid fa-apple-whole"></i> Farm Produce</button>
+                <button class="bazaar-btn" onclick="filterBazaar('Livestock')"><i class="fa-solid fa-cow"></i> Livestock & Dairy</button>
+                <button class="bazaar-btn" onclick="filterBazaar('Machinery')"><i class="fa-solid fa-gears"></i> Machinery</button>
+                <button class="bazaar-btn" onclick="filterBazaar('Services')"><i class="fa-solid fa-wrench"></i> Services</button>
+            </div>
+
+            <!-- Marketplace Grid -->
+            <div class="records-grid" id="bazaarGrid">
+                <!-- Dynamically populated -->
+            </div>
+
+            <!-- Craftsmen & Services Directory -->
+            <div class="card-box mt-4">
+                <div class="card-box-header">
+                    <h3><i class="fa-solid fa-user-gear"></i> Village Artisans & Craftsmen Directory</h3>
+                </div>
+                <div class="craftsmen-grid" id="craftsmenGrid">
+                    <!-- Populated dynamically -->
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ==================== TAB 6: HEALTH & BLOOD DONORS ==================== -->
+        <section id="tabHealth" class="tab-section" style="display: none;">
+            
+            <div class="section-title">
+                <h2><i class="fa-solid fa-heart-pulse"></i> Health Sub-Centre & Village Blood Donors</h2>
+                <p>Emergency medical helplines, free health camp notices, and volunteer blood donor directory.</p>
+            </div>
+
+            <div class="grid-2col">
+                <!-- Blood Donors Registry -->
+                <div class="card-box">
+                    <div class="card-box-header">
+                        <h3><i class="fa-solid fa-droplet" style="color: var(--accent-red);"></i> Village Volunteer Blood Donors</h3>
+                    </div>
+                    <div class="blood-group-filter mb-3">
+                        <span>Filter Blood Group:</span>
+                        <select id="bloodGroupSelect" onchange="filterBloodDonors()">
+                            <option value="ALL">All Groups</option>
+                            <option value="A+">A+</option>
+                            <option value="B+">B+</option>
+                            <option value="O+">O+</option>
+                            <option value="AB+">AB+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </div>
+                    <div class="donor-list" id="donorList">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+
+                <!-- Register as Donor & Medical Camps -->
+                <div class="sidebar-column">
+                    <div class="card-box">
+                        <div class="card-box-header">
+                            <h3><i class="fa-solid fa-user-plus"></i> Register as Blood Donor</h3>
+                        </div>
+                        <form id="donorForm" onsubmit="handleDonorRegister(event)">
+                            <div class="form-group mb-2">
+                                <label>Full Name</label>
+                                <input type="text" id="donorName" required placeholder="e.g. Y. Chenna Kesavulu">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group flex-1">
+                                    <label>Blood Group</label>
+                                    <select id="donorBloodGroup" required>
+                                        <option value="A+">A+</option>
+                                        <option value="B+">B+</option>
+                                        <option value="O+">O+</option>
+                                        <option value="AB+">AB+</option>
+                                        <option value="A-">A-</option>
+                                        <option value="B-">B-</option>
+                                        <option value="O-">O-</option>
+                                        <option value="AB-">AB-</option>
+                                    </select>
+                                </div>
+                                <div class="form-group flex-1">
+                                    <label>Age</label>
+                                    <input type="number" id="donorAge" min="18" max="65" value="25" required>
+                                </div>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label>Phone Number</label>
+                                <input type="text" id="donorPhone" required placeholder="+91 XXXXX XXXXX">
+                            </div>
+                            <button type="submit" class="btn btn-accent btn-block"><i class="fa-solid fa-hand-holding-heart"></i> Register Volunteer Donor</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ==================== TAB 7: EDUCATION & JOBS ==================== -->
+        <section id="tabEducation" class="tab-section" style="display: none;">
+            
+            <div class="section-title">
+                <h2><i class="fa-solid fa-graduation-cap"></i> Education, Employed Professionals & Youth Talent Pool</h2>
+                <p>Directory of village government & private job holders, educated graduate talent pool, MPPS Chilakacherla school, and active recruitment notices.</p>
+            </div>
+
+            <!-- Row 1: School & Active Jobs -->
+            <div class="grid-2col mb-4">
+                <!-- MPPS Chilakacherla School Corner -->
+                <div class="card-box">
+                    <div class="card-box-header">
+                        <h3><i class="fa-solid fa-school"></i> MPPS Chilakacherla Primary School</h3>
+                        <span class="tag-badge l1">UDISE: 28191200401</span>
+                    </div>
+                    <div class="school-info-box">
+                        <div class="kv-pair"><strong>Headmaster:</strong> K. Ramanjaneyulu</div>
+                        <div class="kv-pair"><strong>Total Students:</strong> 114 Boys & Girls</div>
+                        <div class="kv-pair"><strong>Teachers:</strong> 4 Govt Staff Teachers</div>
+                        <div class="kv-pair"><strong>Medium of Instruction:</strong> Telugu & English Medium</div>
+                        <div style="margin-top: 0.8rem; background: rgba(0,0,0,0.06); padding: 0.8rem; border-radius: 8px;">
+                            <strong>Today's Mid-Day Meal Menu:</strong>
+                            <p style="color: var(--accent-green); font-size: 0.85rem; margin-top: 0.2rem;"><i class="fa-solid fa-utensils"></i> Rice, Sambar, Egg Curry, and Chikki (Groundnut Jaggery Sweet)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Active Village & District Jobs -->
+                <div class="card-box">
+                    <div class="card-box-header">
+                        <h3><i class="fa-solid fa-briefcase"></i> Active Employment & Recruitment Openings</h3>
+                    </div>
+                    <div id="jobsListContainer" class="jobs-list">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: Village Employed Professionals & Job Holders Directory -->
+            <div class="card-box mb-4">
+                <div class="card-box-header">
+                    <h3><i class="fa-solid fa-user-tie"></i> Village Employed Professionals & Job Holders</h3>
+                    <span class="tag-badge glow">Government, IT, Banking & Railways</span>
+                </div>
+                <div class="craftsmen-grid" id="jobHoldersGrid">
+                    <!-- Populated dynamically by community.js -->
+                </div>
+            </div>
+
+            <!-- Row 3: Educated Youth & Graduate Talent Directory -->
+            <div class="card-box mb-4">
+                <div class="card-box-header">
+                    <h3><i class="fa-solid fa-user-graduate"></i> Educated Youth & Graduate Talent Pool</h3>
+                    <span class="tag-badge glow">Qualified Job Seekers</span>
+                </div>
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Candidate Name</th>
+                                <th>Degree & Specialization</th>
+                                <th>Passout Year</th>
+                                <th>Key Skills & Expertise</th>
+                                <th>Status</th>
+                                <th>Habitation</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="educatedYouthTableBody">
+                            <!-- Populated dynamically by community.js -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ==================== TAB 8: VOTERS & ELECTION ECOSYSTEM ==================== -->
+        <section id="tabVoter" class="tab-section" style="display: none;">
+            
+            <div class="section-title-between mb-3">
+                <div>
+                    <h2><i class="fa-solid fa-check-to-slot"></i> Yeguva Cherlo Palle Gram Panchayat Voter & Election Ecosystem</h2>
+                    <p>Verified voter roll statistics, ward-wise polling stations, Booth Level Officer (BLO) directory, and Gram Panchayat elected ward representatives (PIN: 523331).</p>
+                </div>
+                <a href="https://voters.eci.gov.in" target="_blank" class="btn btn-accent"><i class="fa-solid fa-arrow-up-right-from-square"></i> ECI Voters Service Portal</a>
+            </div>
+
+            <!-- Quick Voter Summary Badges -->
+            <div class="card-box mb-4">
+                <div class="card-box-header">
+                    <h3><i class="fa-solid fa-users"></i> Registered Voters Overview (Assembly: Yerragondapalem SC | Parliament: Ongole)</h3>
+                    <span class="tag-badge glow">ECI Official Roll 2026</span>
+                </div>
+                <div class="funds-grid">
+                    <div style="background: rgba(2, 132, 199, 0.08); border: 1px solid rgba(2, 132, 199, 0.2); padding: 1.2rem; border-radius: 12px; text-align: center;">
+                        <span style="font-size: 0.82rem; color: var(--text-muted); display: block;">Total Registered Voters</span>
+                        <strong style="font-size: 1.8rem; color: var(--accent-blue); font-family: var(--font-heading);">1,680 Voters</strong>
+                    </div>
+                    <div style="background: rgba(22, 163, 74, 0.08); border: 1px solid rgba(22, 163, 74, 0.2); padding: 1.2rem; border-radius: 12px; text-align: center;">
+                        <span style="font-size: 0.82rem; color: var(--text-muted); display: block;">Male Voters</span>
+                        <strong style="font-size: 1.8rem; color: var(--accent-green); font-family: var(--font-heading);">852 Male</strong>
+                    </div>
+                    <div style="background: rgba(147, 51, 234, 0.08); border: 1px solid rgba(147, 51, 234, 0.2); padding: 1.2rem; border-radius: 12px; text-align: center;">
+                        <span style="font-size: 0.82rem; color: var(--text-muted); display: block;">Female Voters</span>
+                        <strong style="font-size: 1.8rem; color: var(--accent-purple); font-family: var(--font-heading);">828 Female</strong>
+                    </div>
+                    <div style="background: rgba(217, 119, 6, 0.08); border: 1px solid rgba(217, 119, 6, 0.2); padding: 1.2rem; border-radius: 12px; text-align: center;">
+                        <span style="font-size: 0.82rem; color: var(--text-muted); display: block;">Total Polling Stations</span>
+                        <strong style="font-size: 1.8rem; color: var(--accent-amber); font-family: var(--font-heading);">4 Booths (#101-#104)</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ward-wise Polling Stations & Voters Table -->
+            <div class="card-box mb-4">
+                <div class="card-box-header">
+                    <h3><i class="fa-solid fa-building-flag"></i> Ward-wise Polling Booths & BLO Directory</h3>
+                </div>
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Ward No</th>
+                                <th>Habitation / Area</th>
+                                <th>Polling Station No & Location</th>
+                                <th>Total Voters</th>
+                                <th>Male / Female</th>
+                                <th>Booth Level Officer (BLO)</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="voterTableBody">
+                            <!-- Populated dynamically by community.js -->
+                        </tbody>
+                    </table>
+                </div>
+            <!-- Searchable Individual Voters Registry List Card -->
+            <div class="card-box mb-4">
+                <div class="card-box-header">
+                    <h3><i class="fa-solid fa-address-card"></i> Individual Village Voter Roll List & EPIC Search</h3>
+                    <span class="tag-badge glow">Searchable Voter Directory</span>
+                </div>
+                
+                <!-- Search & Ward Filter Bar -->
+                <div class="section-title-between mb-3" style="flex-wrap: wrap; gap: 1rem;">
+                    <div class="search-box-row" style="flex: 1; min-width: 280px;">
+                        <input type="text" id="voterSearchInput" onkeyup="filterVoterMembers()" placeholder="Search by Voter Name, EPIC No (e.g. AP1523331001), or House No...">
+                        <button class="btn btn-primary" onclick="filterVoterMembers()"><i class="fa-solid fa-magnifying-glass"></i> Search Voter</button>
+                    </div>
+                    <div class="bazaar-filter-bar" style="margin-bottom: 0;">
+                        <select id="voterWardFilter" onchange="filterVoterMembers()" style="padding: 0.55rem 1rem; border-radius: 20px; border: 1px solid var(--card-border); background: var(--card-bg-solid); color: var(--text-bright); font-weight: 600;">
+                            <option value="0">All Wards (1 to 5)</option>
+                            <option value="1">Ward 1 (Chilakacherla East)</option>
+                            <option value="2">Ward 2 (Chilakacherla West)</option>
+                            <option value="3">Ward 3 (Chilakacherla Gudem)</option>
+                            <option value="4">Ward 4 (Yeguva Cherlo Palle)</option>
+                            <option value="5">Ward 5 (Panukumadugu)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>EPIC Card No</th>
+                                <th>Voter Resident Name</th>
+                                <th>Guardian / Relation</th>
+                                <th>House No</th>
+                                <th>Gender / Age</th>
+                                <th>Ward & Habitation</th>
+                                <th>Polling Station Booth</th>
+                            </tr>
+                        </thead>
+                        <tbody id="voterMemberTableBody">
+                            <!-- Populated dynamically by community.js -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card-box mb-4">
+                <div class="card-box-header">
+                    <h3><i class="fa-solid fa-user-check"></i> Elected Village Ward Representatives & MPTC</h3>
+                    <span class="tag-badge glow">Gram Panchayat Body</span>
+                </div>
+                <div class="craftsmen-grid" id="wardMembersGrid">
+                    <!-- Populated dynamically by community.js -->
+                </div>
+            </div>
+
+            <!-- Online Electoral Services & Form Downloads -->
+            <div class="card-box">
+                <div class="card-box-header">
+                    <h3><i class="fa-solid fa-laptop-code"></i> ECI Online Voter ID Services & Help Desk</h3>
+                </div>
+                <div class="staff-grid">
+                    <div style="background: var(--card-bg-solid); padding: 1rem; border-radius: 10px; border: 1px solid var(--card-border);">
+                        <strong style="color: var(--accent-blue);"><i class="fa-solid fa-user-plus"></i> Form 6 (New Voter Register):</strong>
+                        <p style="font-size: 0.82rem; color: var(--text-muted);">Apply online for new EPIC card for citizens reaching 18 years.</p>
+                        <a href="https://voters.eci.gov.in/form6" target="_blank" class="btn btn-sm btn-primary mt-2" style="display: inline-flex;"><i class="fa-solid fa-paper-plane"></i> Fill Form 6</a>
+                    </div>
+                    <div style="background: var(--card-bg-solid); padding: 1rem; border-radius: 10px; border: 1px solid var(--card-border);">
+                        <strong style="color: var(--accent-cyan);"><i class="fa-solid fa-pen-to-square"></i> Form 8 (Correction / Shift):</strong>
+                        <p style="font-size: 0.82rem; color: var(--text-muted);">Correction of name, DOB, address shift within Chilakacherla.</p>
+                        <a href="https://voters.eci.gov.in/form8" target="_blank" class="btn btn-sm btn-accent mt-2" style="display: inline-flex;"><i class="fa-solid fa-pen"></i> Fill Form 8</a>
+                    </div>
+                    <div style="background: var(--card-bg-solid); padding: 1rem; border-radius: 10px; border: 1px solid var(--card-border);">
+                        <strong style="color: var(--accent-green);"><i class="fa-solid fa-magnifying-glass"></i> Search EPIC in Electoral Roll:</strong>
+                        <p style="font-size: 0.82rem; color: var(--text-muted);">Check name and serial number in Yerragondapalem Assembly Constituency roll.</p>
+                        <a href="https://electoralsearch.eci.gov.in" target="_blank" class="btn btn-sm btn-success mt-2" style="display: inline-flex;"><i class="fa-solid fa-search"></i> Search EPIC</a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ==================== TAB 9: RESEARCH ENGINE & ADMIN ==================== -->
+        <section id="tabResearch" class="tab-section" style="display: none;">
+            
+            <div class="admin-header-box">
+                <div>
+                    <h2><i class="fa-solid fa-microscope"></i> Internet Research Pipeline & Admin Console</h2>
+                    <p>Continuous discovery pipeline, candidate review queue, and AI agent explorer.</p>
+                </div>
+            </div>
+
+            <!-- Research Admin Controls -->
+            <div id="adminContainer">
+                <!-- Dynamically loaded from admin.js -->
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Post Ad Modal -->
+    <div id="postAdModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-store"></i> Post Item on Grama Bazaar</h3>
+                <button class="close-modal-btn" onclick="closePostAdModal()">&times;</button>
+            </div>
+            <form id="postAdForm" onsubmit="handlePostAdSubmit(event)">
+                <div class="form-group mb-2">
+                    <label>Ad Title</label>
+                    <input type="text" id="adTitle" placeholder="e.g. Fresh A2 Milk / Mahindra Tractor Rental" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group flex-1">
+                        <label>Category</label>
+                        <select id="adCategory">
+                            <option value="Produce">Farm Produce</option>
+                            <option value="Livestock">Livestock & Dairy</option>
+                            <option value="Machinery">Machinery Rental</option>
+                            <option value="Services">Local Service</option>
+                        </select>
+                    </div>
+                    <div class="form-group flex-1">
+                        <label>Price / Rate</label>
+                        <input type="text" id="adPrice" placeholder="e.g. ₹50 / Liter or ₹900 / Hr" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group flex-1">
+                        <label>Your Name</label>
+                        <input type="text" id="adName" required placeholder="e.g. B. Venkateswarlu">
+                    </div>
+                    <div class="form-group flex-1">
+                        <label>Phone Number</label>
+                        <input type="text" id="adPhone" required placeholder="+91 XXXXX XXXXX">
+                    </div>
+                </div>
+                <div class="form-group mb-3">
+                    <label>Description & Details</label>
+                    <textarea id="adDescription" rows="3" placeholder="Provide product or service details..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-accent btn-block"><i class="fa-solid fa-check"></i> Post Listing to Marketplace</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Apply for Scheme Modal -->
+    <div id="applySchemeModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-file-signature"></i> Apply for Scheme</h3>
+                <button class="close-modal-btn" onclick="closeApplySchemeModal()">&times;</button>
+            </div>
+            <form id="schemeApplyForm" onsubmit="handleSchemeApplySubmit(event)">
+                <input type="hidden" id="modalSchemeName">
+                <div class="form-group mb-2">
+                    <label>Selected Scheme</label>
+                    <input type="text" id="displaySchemeName" readonly style="font-weight: 700; color: var(--accent-blue);">
+                </div>
+                <div class="form-group mb-2">
+                    <label>Applicant Full Name</label>
+                    <input type="text" id="applicantName" placeholder="e.g. K. Rama Rao" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group flex-1">
+                        <label>Aadhaar Number</label>
+                        <input type="text" id="applicantAadhar" placeholder="12 Digit Aadhaar No" required>
+                    </div>
+                    <div class="form-group flex-1">
+                        <label>Phone Number</label>
+                        <input type="text" id="applicantPhone" placeholder="+91 XXXXX XXXXX" required>
+                    </div>
+                </div>
+                <div class="form-group mb-3">
+                    <label>Rice Card / Ration Card Number</label>
+                    <input type="text" id="applicantRation" placeholder="e.g. WAP1523331001">
+                </div>
+
+                <div style="background: rgba(2, 132, 199, 0.08); border: 1px solid rgba(2, 132, 199, 0.2); padding: 0.8rem; border-radius: 10px; margin-bottom: 1.2rem; font-size: 0.82rem;">
+                    <strong><i class="fa-solid fa-circle-info"></i> Required Documents Checklist:</strong>
+                    <p id="modalDocChecklist" style="margin-top: 0.3rem; white-space: pre-line; color: var(--text-main);"></p>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block"><i class="fa-solid fa-paper-plane"></i> Submit Application to Sachivalayam</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/community.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

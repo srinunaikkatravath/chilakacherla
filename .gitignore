@@ -1,0 +1,22 @@
+# Target & Build Output
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.log
+
+# IDE & Editor files
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# System generated logs
+.system_generated/
