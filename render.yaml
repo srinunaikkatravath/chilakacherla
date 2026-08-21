@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: chilakacherla-gram-panchayat
+    env: docker
+    plan: free
+    region: singapore
+    branch: main
