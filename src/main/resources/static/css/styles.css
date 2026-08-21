@@ -1046,9 +1046,16 @@ body {
     color: var(--text-muted);
 }
 
-.footer-credit strong {
+.footer-credit strong, .footer-credit a {
     color: var(--accent-cyan);
     font-family: var(--font-heading);
     letter-spacing: 0.4px;
+    transition: opacity 0.2s ease, text-decoration 0.2s ease;
 }
+
+.footer-credit a:hover {
+    opacity: 0.85;
+    text-decoration: underline;
+}
+
 
