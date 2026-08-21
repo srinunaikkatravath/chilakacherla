@@ -214,6 +214,16 @@ body {
     color: var(--accent-cyan);
     font-weight: 500;
     box-shadow: var(--shadow-sm);
+    white-space: nowrap;
+    max-width: fit-content;
+    flex-shrink: 0;
+}
+
+.weather-short {
+    display: none;
+}
+.weather-full {
+    display: inline;
 }
 
 /* Main Navigation Bar */
@@ -980,19 +990,26 @@ button, a, select, input {
     .header-actions {
         display: flex;
         align-items: center;
-        gap: 0.3rem !important;
+        gap: 0.35rem !important;
         width: auto !important;
         flex-shrink: 0;
     }
     .live-weather-badge {
-        padding: 0.25rem 0.5rem !important;
+        padding: 0.25rem 0.55rem !important;
         font-size: 0.72rem !important;
         border-radius: 12px !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
     }
+    .weather-full { display: none !important; }
+    .weather-short { display: inline !important; }
+    #themeText { display: none !important; }
+
     .theme-toggle-btn {
         padding: 0.25rem 0.55rem !important;
         font-size: 0.72rem !important;
         border-radius: 12px !important;
+        flex-shrink: 0 !important;
     }
 
     /* Sticky Slim Navigation Bar */
