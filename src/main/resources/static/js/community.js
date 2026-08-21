@@ -66,14 +66,17 @@ function switchCommunityTab(tabId) {
         if (sec) sec.style.display = (t === tabId) ? 'block' : 'none';
     });
 
-    document.querySelectorAll('.nav-tab').forEach(btn => btn.classList.remove('active'));
-    if (event && event.currentTarget && event.currentTarget.classList) {
-        event.currentTarget.classList.add('active');
-    }
+    document.querySelectorAll('.nav-tab').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(`'${tabId}'`)) {
+            btn.classList.add('active');
+        }
+    });
 
-    if (tabId === 'schemes') { loadSchemes(); loadPanchayatFunds(); }
+    if (tabId === 'home') { loadNotices(); loadVillageEvents(); }
+    else if (tabId === 'schemes') { loadSchemes(); loadPanchayatFunds(); loadNriConnect(); }
     else if (tabId === 'sachivalayam') loadRecentGrievances();
-    else if (tabId === 'farmers') loadRbkStocks();
+    else if (tabId === 'farmers') { loadRbkStocks(); loadMandiRates(); }
     else if (tabId === 'bazaar') { loadMarketplace(); loadCraftsmen(); }
     else if (tabId === 'health') loadBloodDonors();
     else if (tabId === 'education') { loadJobs(); loadJobHolders(); loadEducatedYouth(); }
